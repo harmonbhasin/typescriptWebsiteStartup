@@ -7,13 +7,16 @@ import {
   Heading,
   Flex,
   Container,
+  VStack,
 } from '@chakra-ui/react'
 
 const Contact: NextPage = () => (
   <Box>
-    <Container maxWidth={'4xl'} centerContent>
-      <Heading size={'4xl'}>Contact Information</Heading>
-      <Text>You can find us at the any the links below:</Text>
+    <Container maxWidth={'4xl'} p={10} centerContent>
+      <VStack spacing={20}>
+        <Heading size={'4xl'}>Contact Information</Heading>
+        <Text>Email: saltubolic@protonmail.com</Text>
+      </VStack>
       <Box height="1000px"></Box>
     </Container>
   </Box>

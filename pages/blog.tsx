@@ -11,7 +11,7 @@ import {
 import Post from '../components/post'
 
 const Blog: NextPage = () => (
-  <Box>
+  <Box color={'#490b3d'}>
     <Post />
   </Box>
 )

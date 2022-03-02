@@ -7,22 +7,24 @@ import {
   Heading,
   Flex,
   Container,
+  VStack,
 } from '@chakra-ui/react'
 import Stats from '../components/basicStats'
 import Speech from '../components/speechBubble'
 
 const Home: NextPage = () => (
-  <Box>
-    <Container maxWidth={'container.xl'}>
-      <Flex direction={'column'} alignItems={'center'}>
-        <Image src="/Logo.jpg" alt="SCS" />
+  <Box color={'#490b3d'}>
+    <Container maxWidth={'container.xl'} centerContent>
+      <VStack>
+        <Image src="/LogoWithoutText.jpg" alt="SCS" />
+        <Heading size={'4xl'}>Saltubolic Coaching Services</Heading>
         <Heading size={'xl'}>
           Build your dream body while not having to sacrifice other parts of
           your life
         </Heading>
         <Speech />
         <Stats />
-      </Flex>
+      </VStack>
     </Container>
   </Box>
 )

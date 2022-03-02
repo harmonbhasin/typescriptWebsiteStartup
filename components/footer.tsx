@@ -39,7 +39,7 @@ const SocialButton = ({
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+        bg: '#f1b814',
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -50,10 +50,7 @@ const SocialButton = ({
 
 export default function SmallWithLogoLeft() {
   return (
-    <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
-    >
+    <Box bg={'#bd1e51'} color={'white'}>
       <Container
         as={Stack}
         maxW={'6xl'}
