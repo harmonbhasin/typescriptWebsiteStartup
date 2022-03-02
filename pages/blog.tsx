@@ -8,7 +8,7 @@ import {
   Flex,
   Container,
 } from '@chakra-ui/react'
-import Post from '../components/blog/post'
+import Post from '../components/post'
 
 const Blog: NextPage = () => (
   <Box>
