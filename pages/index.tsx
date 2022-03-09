@@ -18,10 +18,7 @@ const Home: NextPage = () => (
       <VStack>
         <Image src="/LogoWithoutText.jpg" alt="SCS" />
         <Heading size={'4xl'}>Saltubolic Coaching Services</Heading>
-        <Heading size={'xl'}>
-          Build your dream body while not having to sacrifice other parts of
-          your life
-        </Heading>
+        <Heading size={'xl'}>Meet your fitness goals</Heading>
         <Speech />
         <Stats />
       </VStack>

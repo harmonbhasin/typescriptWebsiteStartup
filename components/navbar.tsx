@@ -28,6 +28,7 @@ interface NavLinkProps {
 const Links = [
   { title: 'Home', loc: '/' },
   { title: 'About', loc: 'about' },
+  { title: 'Services', loc: 'services' },
   { title: 'Blog', loc: '/blog' },
   { title: 'Contact', loc: '/contact' },
 ]
