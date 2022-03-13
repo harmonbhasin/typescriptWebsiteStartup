@@ -90,10 +90,10 @@ const TestimonialAvatar = ({
 export default function WithSpeechBubbles() {
   return (
     <Box>
-      <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
+      <Container maxW={'7xl'} py={12} as={Stack} spacing={8}>
         <Stack spacing={0} align={'center'}>
           <Heading>Our Clients Speak</Heading>
-          <Text>We have been working with clients around the world</Text>
+          <Text>We have been working with clients around the country</Text>
         </Stack>
         <Stack
           direction={{ base: 'column', md: 'row' }}
