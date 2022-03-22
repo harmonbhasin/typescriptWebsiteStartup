@@ -14,7 +14,7 @@ import { redirect } from 'next/dist/server/api-utils'
 
 const Services: NextPage = () => (
   <Box>
-    <Box backgroundColor={'red.100'}>
+    <Box backgroundColor={'red.100'} p={10}>
       <VStack spacing={20} p={10}>
         <Heading size={'4xl'}>What You Get</Heading>
         <HStack spacing={500}>
@@ -40,7 +40,7 @@ const Services: NextPage = () => (
               Access to Harmon & Michael from 10 am - 10 pm for advice
             </ListItem>
           </List>
-          <Text>Whore</Text>
+          <Text>Replacement Text</Text>
         </HStack>
       </VStack>
     </Box>
