@@ -13,7 +13,6 @@ const Individual = ({ name, about, img, cards }: IndividualProps) => (
     <Heading>{name}</Heading>
     <Image src={img} borderRadius="full" boxSize="250px" fit={'cover'} />
     <Text>{about}</Text>
-    <Gallery cards={cards} />
   </VStack>
 )
 

@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import Stats from '../src/components/stats'
 import Speech from '../src/components/speechBubble'
+import Newsletter from '../src/components/newsletter'
 
 const Home: NextPage = () => (
   <Box color={'#490b3d'}>
@@ -20,6 +21,7 @@ const Home: NextPage = () => (
         <Heading size={'xl'}>Meet your fitness goals</Heading>
         <Speech />
         <Stats />
+        <Newsletter />
       </VStack>
     </Container>
   </Box>

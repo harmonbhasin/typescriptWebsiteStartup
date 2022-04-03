@@ -110,7 +110,7 @@ export default function WithSpeechBubbles() {
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={'/Sophie.jpg'}
+              src={'/clients/Sophie.jpg'}
               name={'Sophie Levine'}
               title={'Student at University of Wisconsin-Madison'}
             />
@@ -126,7 +126,7 @@ export default function WithSpeechBubbles() {
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={'/Carlene.jpg'}
+              src={'/clients/Carlene.jpg'}
               name={'Carlene Neuville'}
               title={'Student at University of Wisconsin-Madison'}
             />
@@ -142,7 +142,7 @@ export default function WithSpeechBubbles() {
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={'/Attie.jpg'}
+              src={'/clients/Attie.jpg'}
               name={'Arthur Stanson'}
               title={'Student at Harper Community College'}
             />

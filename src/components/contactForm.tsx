@@ -1,172 +1,222 @@
+import { CheckIcon } from '@chakra-ui/icons'
 import {
-  Container,
-  Flex,
   Box,
-  Heading,
-  Text,
-  IconButton,
   Button,
-  VStack,
-  HStack,
-  Wrap,
-  WrapItem,
+  Flex,
   FormControl,
   FormLabel,
+  Heading,
+  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
+  Link,
+  Stack,
   Textarea,
+  Tooltip,
+  useClipboard,
+  useColorModeValue,
+  VStack,
 } from '@chakra-ui/react'
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail,
-} from 'react-icons/md'
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs'
+import React, { ChangeEvent, useState } from 'react'
+import { BsInstagram, BsPerson, BsTwitter, BsLinkedin } from 'react-icons/bs'
+import { MdEmail, MdOutlineEmail } from 'react-icons/md'
 
-export default function contact() {
+const ContactFormWithSocialButtons = () => {
+  const { hasCopied, onCopy } = useClipboard('saltubolic@protonmail.com')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [content, setContent] = useState('')
+  const [state, setState] = useState<'initial' | 'submitting' | 'success'>(
+    'initial'
+  )
+
+  const submitData = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    try {
+      const body = { name, email, content }
+      await fetch('/api/post/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+      setState('success')
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
   return (
-    <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
-      <Flex>
-        <Box
-          bg="#02054B"
-          color="white"
-          borderRadius="lg"
-          m={{ sm: 4, md: 16, lg: 10 }}
-          p={{ sm: 5, md: 5, lg: 16 }}
-        >
-          <Box p={4}>
-            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
-              <WrapItem>
-                <Box>
-                  <Heading>Contact</Heading>
-                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
-                    Fill up the form below to contact
-                  </Text>
-                  <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                    <VStack pl={0} spacing={3} alignItems="flex-start">
-                      <Button
-                        size="md"
-                        height="48px"
-                        width="200px"
-                        variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdPhone color="#1970F1" size="20px" />}
-                      >
-                        +91-988888888
-                      </Button>
-                      <Button
-                        size="md"
-                        height="48px"
-                        width="200px"
-                        variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdEmail color="#1970F1" size="20px" />}
-                      >
-                        hello@abc.com
-                      </Button>
-                      <Button
-                        size="md"
-                        height="48px"
-                        width="200px"
-                        variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
-                      >
-                        Karnavati, India
-                      </Button>
-                    </VStack>
-                  </Box>
-                  <HStack
-                    mt={{ lg: 10, md: 10 }}
-                    spacing={5}
-                    px={5}
-                    alignItems="flex-start"
+    <Flex align="center" justify="center" id="contact">
+      <Box
+        borderRadius="lg"
+        m={{ base: 5, md: 16, lg: 10 }}
+        p={{ base: 5, lg: 16 }}
+      >
+        <Box>
+          <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+            <Heading
+              fontSize={{
+                base: '4xl',
+                md: '5xl',
+              }}
+            >
+              Get in Touch
+            </Heading>
+
+            <Stack
+              spacing={{ base: 4, md: 8, lg: 20 }}
+              direction={{ base: 'column', md: 'row' }}
+            >
+              <Stack
+                align="center"
+                justify="space-around"
+                direction={{ base: 'row', md: 'column' }}
+              >
+                <Tooltip
+                  label={hasCopied ? 'Email Copied!' : 'Copy Email'}
+                  closeOnClick={false}
+                  hasArrow
+                >
+                  <IconButton
+                    aria-label="email"
+                    variant="ghost"
+                    size="lg"
+                    fontSize="3xl"
+                    icon={<MdEmail />}
+                    _hover={{
+                      bg: 'blue.500',
+                      color: useColorModeValue('white', 'gray.700'),
+                    }}
+                    onClick={onCopy}
+                    isRound
+                  />
+                </Tooltip>
+
+                <Link href="https://twitter.com/vendallservices">
+                  <IconButton
+                    aria-label="twitter"
+                    variant="ghost"
+                    size="lg"
+                    icon={<BsTwitter size="28px" />}
+                    _hover={{
+                      bg: 'blue.500',
+                      color: useColorModeValue('white', 'gray.700'),
+                    }}
+                    isRound
+                  />
+                </Link>
+
+                <Link href="https://www.instagram.com/vendallservices/">
+                  <IconButton
+                    aria-label="instagram"
+                    variant="ghost"
+                    size="lg"
+                    icon={<BsInstagram size="28px" />}
+                    _hover={{
+                      bg: 'blue.500',
+                      color: useColorModeValue('white', 'gray.700'),
+                    }}
+                    isRound
+                  />
+                </Link>
+
+                <Link href="https://www.tiktok.com/@saltubolic'">
+                  <IconButton
+                    aria-label="tiktok"
+                    variant="ghost"
+                    size="lg"
+                    icon={<BsLinkedin size="28px" />}
+                    _hover={{
+                      bg: 'blue.500',
+                      color: useColorModeValue('white', 'gray.700'),
+                    }}
+                    isRound
+                  />
+                </Link>
+              </Stack>
+
+              <Box
+                bg={useColorModeValue('white', 'gray.700')}
+                borderRadius="lg"
+                p={8}
+                color={useColorModeValue('gray.700', 'whiteAlpha.900')}
+                shadow="base"
+              >
+                <VStack spacing={5} as={'form'} onSubmit={submitData}>
+                  <FormControl isRequired>
+                    <FormLabel>Name</FormLabel>
+
+                    <InputGroup>
+                      <InputLeftElement children={<BsPerson />} />
+                      <Input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        value={name}
+                        disabled={state !== 'initial'}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                          setName(e.target.value)
+                        }
+                      />
+                    </InputGroup>
+                  </FormControl>
+
+                  <FormControl isRequired>
+                    <FormLabel>Email</FormLabel>
+
+                    <InputGroup>
+                      <InputLeftElement children={<MdOutlineEmail />} />
+                      <Input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        value={email}
+                        disabled={state !== 'initial'}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                          setEmail(e.target.value)
+                        }
+                      />
+                    </InputGroup>
+                  </FormControl>
+
+                  <FormControl isRequired>
+                    <FormLabel>Message</FormLabel>
+
+                    <Textarea
+                      name="message"
+                      placeholder="Your Message"
+                      rows={6}
+                      resize="none"
+                      value={content}
+                      disabled={state !== 'initial'}
+                      onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                        setContent(e.target.value)
+                      }
+                    />
+                  </FormControl>
+
+                  <Button
+                    bg="#59A5D8"
+                    color="white"
+                    _hover={{
+                      bg: 'blue.500',
+                    }}
+                    isFullWidth
+                    isLoading={state === 'submitting'}
+                    w="100%"
+                    type={state === 'success' ? 'button' : 'submit'}
                   >
-                    <IconButton
-                      aria-label="facebook"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
-                      icon={<MdFacebook size="28px" />}
-                    />
-                    <IconButton
-                      aria-label="github"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
-                      icon={<BsGithub size="28px" />}
-                    />
-                    <IconButton
-                      aria-label="discord"
-                      variant="ghost"
-                      size="lg"
-                      isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
-                      icon={<BsDiscord size="28px" />}
-                    />
-                  </HStack>
-                </Box>
-              </WrapItem>
-              <WrapItem>
-                <Box bg="white" borderRadius="lg">
-                  <Box m={8} color="#0B0E3F">
-                    <VStack spacing={5}>
-                      <FormControl id="name">
-                        <FormLabel>Your Name</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<BsPerson color="gray.800" />}
-                          />
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="name">
-                        <FormLabel>Mail</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<MdOutlineEmail color="gray.800" />}
-                          />
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="name">
-                        <FormLabel>Message</FormLabel>
-                        <Textarea
-                          borderColor="gray.300"
-                          _hover={{
-                            borderRadius: 'gray.300',
-                          }}
-                          placeholder="message"
-                        />
-                      </FormControl>
-                      <FormControl id="name" float="right">
-                        <Button
-                          variant="solid"
-                          bg="#0D74FF"
-                          color="white"
-                          _hover={{}}
-                        >
-                          Send Message
-                        </Button>
-                      </FormControl>
-                    </VStack>
-                  </Box>
-                </Box>
-              </WrapItem>
-            </Wrap>
-          </Box>
+                    {state === 'success' ? <CheckIcon /> : 'Submit'}
+                  </Button>
+                </VStack>
+              </Box>
+            </Stack>
+          </VStack>
         </Box>
-      </Flex>
-    </Container>
+      </Box>
+    </Flex>
   )
 }
+
+export default ContactFormWithSocialButtons
