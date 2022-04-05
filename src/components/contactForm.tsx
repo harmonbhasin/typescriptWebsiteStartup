@@ -100,7 +100,7 @@ const ContactFormWithSocialButtons = () => {
                   />
                 </Tooltip>
 
-                <Link href="https://twitter.com/vendallservices">
+                <Link href="https://twitter.com/saltubolic'">
                   <IconButton
                     aria-label="twitter"
                     variant="ghost"
@@ -114,7 +114,7 @@ const ContactFormWithSocialButtons = () => {
                   />
                 </Link>
 
-                <Link href="https://www.instagram.com/vendallservices/">
+                <Link href="https://www.instagram.com/saltubolic/">
                   <IconButton
                     aria-label="instagram"
                     variant="ghost"
