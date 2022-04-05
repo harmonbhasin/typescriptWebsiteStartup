@@ -15,6 +15,11 @@ const Logo = (props: any) => {
   return <Image height={32} viewBox="0 0 120 28" src={'/Logo.jpg'} {...props} />
 }
 
+interface ColorsProps {
+  background: string
+  color: string
+}
+
 const SocialButton = ({
   children,
   label,
@@ -38,7 +43,7 @@ const SocialButton = ({
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-        bg: '#f1b814',
+        bg: '#99AA38',
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -49,7 +54,7 @@ const SocialButton = ({
 
 export default function SmallWithLogoLeft() {
   return (
-    <Box bg={'#bd1e51'} color={'white'}>
+    <Box bg={'#14591D'} color={'white'}>
       <Container
         as={Stack}
         maxW={'6xl'}

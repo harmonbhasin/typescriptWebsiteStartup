@@ -13,12 +13,13 @@ import Speech from '../src/components/speechBubble'
 import Newsletter from '../src/components/newsletter'
 
 const Home: NextPage = () => (
-  <Box color={'#490b3d'}>
+  <Box p={10} color={'#0A210F'}>
     <Container maxWidth={'container.xl'} centerContent>
       <VStack>
-        <Image src={'/LogoWithoutText.jpg'} />
-        <Heading size={'4xl'}>Saltubolic Coaching Services</Heading>
-        <Heading size={'xl'}>Meet your fitness goals</Heading>
+        {/*<Image src={'/LogoWithoutText.jpg'} />*/}
+        <Heading py={5} size={'4xl'}>
+          Meet Your Fitness Goals
+        </Heading>
         <Speech />
         <Stats />
         <Newsletter />

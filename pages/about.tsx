@@ -19,9 +19,9 @@ const About: NextPage = () => (
         }
         img={'/harmon/formalHarmon.jpg'}
         cards={[
+          '/harmon/harmon0.jpg',
           '/harmon/harmon1.jpg',
           '/harmon/harmon2.jpg',
-          '/harmon/harmon3.jpg',
         ]}
       />
       <Individual
@@ -31,10 +31,9 @@ const About: NextPage = () => (
         }
         img={'/michael/formalMichael.jpg'}
         cards={[
+          '/michael/michael0.jpg',
           '/michael/michael1.jpg',
           '/michael/michael2.jpg',
-          '/michael/michael3.jpg',
-          '/michael/michael4.jpg',
         ]}
       />
     </SimpleGrid>

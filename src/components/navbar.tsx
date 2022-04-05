@@ -19,9 +19,9 @@ interface NavLinkProps {
 
 const Links = [
   { title: 'Home', loc: '/' },
-  { title: 'About', loc: 'about' },
-  { title: 'Services', loc: 'services' },
-  { title: 'Blog', loc: '/blog' },
+  { title: 'About', loc: '/about' },
+  { title: 'Services', loc: '/services' },
+  { title: 'Blog', loc: '/' },
   { title: 'Contact', loc: '/contact' },
 ]
 
@@ -32,7 +32,7 @@ const NavLink = ({ title, loc }: NavLinkProps) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: '#f1b814',
+      bg: '#99AA38',
     }}
     href={loc}
   >
@@ -45,7 +45,7 @@ export default function Simple() {
 
   return (
     <>
-      <Box bg={'#bd1e51'} color={'white'} px={4}>
+      <Box bg={'#14591D'} color={'white'} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}

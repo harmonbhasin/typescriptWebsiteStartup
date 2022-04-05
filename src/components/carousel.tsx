@@ -84,7 +84,7 @@ export default function Carousel({ cards }: CarouselProps) {
         {cards.map((url, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height={'xl'}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"

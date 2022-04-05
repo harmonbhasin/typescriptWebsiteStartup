@@ -19,6 +19,9 @@ const Simple = () => {
   )
   const [error, setError] = useState(false)
 
+  const backgroundC = '#14591D'
+  const colorS = '#99AA38'
+
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     try {
@@ -38,7 +41,7 @@ const Simple = () => {
     <Flex minH={'30vh'} align={'center'} justify={'center'}>
       <Container
         maxW={'lg'}
-        bg={'#59A5D8'}
+        bg={backgroundC}
         boxShadow={'xl'}
         rounded={'lg'}
         p={6}
@@ -82,7 +85,7 @@ const Simple = () => {
           <FormControl w={{ base: '100%', md: '40%' }}>
             <Button
               // Look into color scheme
-              backgroundColor={'#84D2F6'}
+              backgroundColor={colorS}
               color={'white'}
               isLoading={state === 'submitting'}
               w="100%"

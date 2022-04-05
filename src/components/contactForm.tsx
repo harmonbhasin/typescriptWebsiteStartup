@@ -17,9 +17,12 @@ import {
   useClipboard,
   useColorModeValue,
   VStack,
+  Text,
 } from '@chakra-ui/react'
 import React, { ChangeEvent, useState } from 'react'
-import { BsInstagram, BsPerson, BsTwitter, BsLinkedin } from 'react-icons/bs'
+import { BsInstagram, BsPerson, BsTwitter } from 'react-icons/bs'
+import { FaTiktok } from 'react-icons/fa'
+import { IoLogoVenmo } from 'react-icons/io5'
 import { MdEmail, MdOutlineEmail } from 'react-icons/md'
 
 const ContactFormWithSocialButtons = () => {
@@ -64,6 +67,10 @@ const ContactFormWithSocialButtons = () => {
               Get in Touch
             </Heading>
 
+            <Text>
+              Enter your information and pay through venmo to get your plan!{' '}
+            </Text>
+
             <Stack
               spacing={{ base: 4, md: 8, lg: 20 }}
               direction={{ base: 'column', md: 'row' }}
@@ -85,7 +92,7 @@ const ContactFormWithSocialButtons = () => {
                     fontSize="3xl"
                     icon={<MdEmail />}
                     _hover={{
-                      bg: 'blue.500',
+                      bg: '#99AA38',
                       color: useColorModeValue('white', 'gray.700'),
                     }}
                     onClick={onCopy}
@@ -100,7 +107,7 @@ const ContactFormWithSocialButtons = () => {
                     size="lg"
                     icon={<BsTwitter size="28px" />}
                     _hover={{
-                      bg: 'blue.500',
+                      bg: '#99AA38',
                       color: useColorModeValue('white', 'gray.700'),
                     }}
                     isRound
@@ -114,7 +121,7 @@ const ContactFormWithSocialButtons = () => {
                     size="lg"
                     icon={<BsInstagram size="28px" />}
                     _hover={{
-                      bg: 'blue.500',
+                      bg: '#99AA38',
                       color: useColorModeValue('white', 'gray.700'),
                     }}
                     isRound
@@ -126,9 +133,22 @@ const ContactFormWithSocialButtons = () => {
                     aria-label="tiktok"
                     variant="ghost"
                     size="lg"
-                    icon={<BsLinkedin size="28px" />}
+                    icon={<FaTiktok size="28px" />}
                     _hover={{
-                      bg: 'blue.500',
+                      bg: '#99AA38',
+                      color: useColorModeValue('white', 'gray.700'),
+                    }}
+                    isRound
+                  />
+                </Link>
+                <Link href="https://account.venmo.com/u/harmonb">
+                  <IconButton
+                    aria-label="venmo"
+                    variant="ghost"
+                    size="lg"
+                    icon={<IoLogoVenmo size="28px" />}
+                    _hover={{
+                      bg: '#99AA38',
                       color: useColorModeValue('white', 'gray.700'),
                     }}
                     isRound
@@ -197,10 +217,10 @@ const ContactFormWithSocialButtons = () => {
                   </FormControl>
 
                   <Button
-                    bg="#59A5D8"
+                    bg="#14591D"
                     color="white"
                     _hover={{
-                      bg: 'blue.500',
+                      bg: '#99AA38',
                     }}
                     isFullWidth
                     isLoading={state === 'submitting'}
