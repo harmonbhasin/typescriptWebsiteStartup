@@ -45,7 +45,7 @@ export default function BasicStatistics() {
         Who we coach?
       </chakra.h1>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-        <StatsCard title={'We serve'} stat={'13 clients'} />
+        <StatsCard title={'We serve'} stat={'15 clients'} />
         <StatsCard title={'In'} stat={'3 different states'} />
         <StatsCard title={'From ages'} stat={'18 - 21'} />
       </SimpleGrid>
