@@ -1,23 +1,8 @@
 import type { NextPage } from 'next'
-import {
-  Box,
-  Text,
-  Heading,
-  VStack,
-  ListItem,
-  ListIcon,
-  List,
-  Stack,
-  Flex,
-  Spacer,
-  Image,
-  Center,
-} from '@chakra-ui/react'
-import PartOne from '../src/components/partOne'
-import PartTwo from '../src/components/partTwo'
-import PartThree from '../src/components/partThree'
-
-import { MdCheckCircle } from 'react-icons/md'
+import { Flex } from '@chakra-ui/react'
+import PartOne from '../src/components/service/partOne'
+import PartTwo from '../src/components/service/partTwo'
+import PartThree from '../src/components/service/partThree'
 
 const Services: NextPage = () => (
   <Flex direction="column">

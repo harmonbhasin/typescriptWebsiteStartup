@@ -11,10 +11,6 @@ import {
 import { FaInstagram, FaTwitter, FaTiktok } from 'react-icons/fa'
 import { ReactNode } from 'react'
 
-const Logo = (props: any) => {
-  return <Image height={32} viewBox="0 0 120 28" src={'/Logo.jpg'} {...props} />
-}
-
 interface ColorsProps {
   background: string
   color: string

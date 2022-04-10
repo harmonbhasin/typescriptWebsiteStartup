@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Box, Heading, Center, SimpleGrid } from '@chakra-ui/react'
-import Individual from '../src/components/biography'
+import Individual from '../src/components/about/biography'
 
 const About: NextPage = () => (
   <Box color={'#490b3d'}>
