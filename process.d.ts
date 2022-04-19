@@ -5,5 +5,7 @@ declare namespace NodeJS {
     NEXTAUTH_SECRET: string
     GOOGLE_ID: string
     GOOGLE_SECRET: string
+    NOTION_KEY: string
+    NOTION_DATABASE_ID: string
   }
 }

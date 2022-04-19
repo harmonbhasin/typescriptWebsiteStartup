@@ -28,7 +28,6 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
     <a onClick={() => Router.push('/p/[id]', `/p/${post.id}`)}>
       <Flex
         boxShadow={'lg'}
-        maxW={'640px'}
         direction={{ base: 'column-reverse', md: 'row' }}
         width={'full'}
         rounded={'xl'}

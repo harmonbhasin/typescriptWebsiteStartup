@@ -7,6 +7,9 @@ import {
   StatNumber,
   useColorModeValue,
 } from '@chakra-ui/react'
+import { Client } from '@notionhq/client'
+
+const notion = new Client({ auth: process.env.NOTION_KEY })
 
 interface StatsCardProps {
   title: string
@@ -45,7 +48,7 @@ export default function BasicStatistics() {
         Who we coach?
       </chakra.h1>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-        <StatsCard title={'We serve'} stat={'15 clients'} />
+        <StatsCard title={'We serve'} stat={'15'} />
         <StatsCard title={'In'} stat={'3 different states'} />
         <StatsCard title={'From ages'} stat={'18 - 21'} />
       </SimpleGrid>

@@ -31,6 +31,11 @@ const Simple = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       })
+      await fetch('/api/post/notionNews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
       setState('success')
     } catch (error) {
       console.error(error)

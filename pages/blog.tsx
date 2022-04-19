@@ -38,12 +38,7 @@ const Blog: React.FC<Props> = (props) => {
           direction={'column'}
           width={'full'}
         >
-          <SimpleGrid
-            columns={{ base: 1, xl: 2 }}
-            spacing={'20'}
-            mt={16}
-            mx={'auto'}
-          >
+          <SimpleGrid columns={1} spacing={'20'} mt={10} mx={'auto'}>
             {props.feed.map((post) => (
               <Post post={post} />
             ))}
@@ -51,33 +46,6 @@ const Blog: React.FC<Props> = (props) => {
         </Flex>
       </>
     )
-    {
-      return (
-        <>
-          <Center>
-            <Heading>Saltubolic Blogs</Heading>
-          </Center>
-          <Flex
-            textAlign={'center'}
-            pt={10}
-            justifyContent={'center'}
-            direction={'column'}
-            width={'full'}
-          >
-            <SimpleGrid
-              columns={{ base: 1, xl: 2 }}
-              spacing={'20'}
-              mt={16}
-              mx={'auto'}
-            >
-              {props.feed.map((post) => (
-                <Post post={post} />
-              ))}
-            </SimpleGrid>
-          </Flex>
-        </>
-      )
-    }
   }
   return (
     <Flex direction={'column'} p={10}>
@@ -91,12 +59,7 @@ const Blog: React.FC<Props> = (props) => {
         direction={'column'}
         width={'full'}
       >
-        <SimpleGrid
-          columns={{ base: 1, xl: 2 }}
-          spacing={'20'}
-          mt={16}
-          mx={'auto'}
-        >
+        <SimpleGrid columns={1} spacing={'20'} mt={10} mx={'auto'}>
           {props.feed.map((post) => (
             <Post post={post} />
           ))}

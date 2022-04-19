@@ -35,7 +35,7 @@ const partOne = () => {
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color="#D9D982" />
-            Weekly check-ins to tweek program and look at progress
+            Weekly check-ins to tweak program and look at progress
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color="#D9D982" />
