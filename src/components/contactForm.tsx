@@ -18,11 +18,17 @@ import {
   useColorModeValue,
   VStack,
   Text,
+  OrderedList,
+  ListItem,
 } from '@chakra-ui/react'
 import React, { ChangeEvent, useState } from 'react'
-import { BsInstagram, BsPerson, BsTwitter } from 'react-icons/bs'
-import { FaTiktok } from 'react-icons/fa'
-import { IoLogoVenmo } from 'react-icons/io5'
+import {
+  BsFillCalendarCheckFill,
+  BsInstagram,
+  BsPerson,
+  BsTwitter,
+} from 'react-icons/bs'
+import { FaTiktok, FaStripeS } from 'react-icons/fa'
 import { MdEmail, MdOutlineEmail } from 'react-icons/md'
 
 const ContactFormWithSocialButtons = () => {
@@ -64,12 +70,18 @@ const ContactFormWithSocialButtons = () => {
                 md: '5xl',
               }}
             >
-              Get in Touch
+              Buy Your Plan Today!
             </Heading>
 
-            <Text>
-              Enter your information and pay through venmo to get your plan!{' '}
-            </Text>
+            <OrderedList>
+              <ListItem>Fill out your information below.</ListItem>
+              <ListItem>Pay through Stripe with the S-shaped button.</ListItem>
+              <ListItem>
+                Find a time for your consultation call through the
+                calendar-shaped button.
+              </ListItem>
+              <ListItem>Prepare to have your life changed!</ListItem>
+            </OrderedList>
 
             <Stack
               spacing={{ base: 4, md: 8, lg: 20 }}
@@ -128,7 +140,7 @@ const ContactFormWithSocialButtons = () => {
                   />
                 </Link>
 
-                <Link href="https://www.tiktok.com/@saltubolic'">
+                <Link href="https://www.tiktok.com/@saltubolic">
                   <IconButton
                     aria-label="tiktok"
                     variant="ghost"
@@ -141,12 +153,25 @@ const ContactFormWithSocialButtons = () => {
                     isRound
                   />
                 </Link>
-                <Link href="https://account.venmo.com/u/harmonb">
+                <Link href="https://buy.stripe.com/3cs4jy8DQf7k97G144">
                   <IconButton
                     aria-label="venmo"
                     variant="ghost"
                     size="lg"
-                    icon={<IoLogoVenmo size="28px" />}
+                    icon={<FaStripeS size="28px" />}
+                    _hover={{
+                      bg: '#99AA38',
+                      color: useColorModeValue('white', 'gray.700'),
+                    }}
+                    isRound
+                  />
+                </Link>
+                <Link href="https://calendly.com/harmonb/30min">
+                  <IconButton
+                    aria-label="venmo"
+                    variant="ghost"
+                    size="lg"
+                    icon={<BsFillCalendarCheckFill size="28px" />}
                     _hover={{
                       bg: '#99AA38',
                       color: useColorModeValue('white', 'gray.700'),

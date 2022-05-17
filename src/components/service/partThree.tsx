@@ -25,7 +25,7 @@ const partThree = () => {
         <List py={{ base: '7', md: '0' }} spacing={{ base: '5', md: '10' }}>
           <ListItem>
             <ListIcon as={MdCheckCircle} color="#D9D982" />
-            Only $15 for your first 8 week program
+            Only $15 for your first 6 week program
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color="#D9D982" />

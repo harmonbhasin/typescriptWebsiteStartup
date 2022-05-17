@@ -29,7 +29,7 @@ const Blog: React.FC<Props> = (props) => {
       <>
         <Header />
         <Center>
-          <Heading>Saltubolic Blogs</Heading>
+          <Heading color ={'#0A210F'}>Saltubolic Blogs</Heading>
         </Center>
         <Flex
           textAlign={'center'}
@@ -50,7 +50,7 @@ const Blog: React.FC<Props> = (props) => {
   return (
     <Flex direction={'column'} p={10}>
       <Center>
-        <Heading size={'4xl'}>Saltubolic Blogs</Heading>
+        <Heading size={'4xl'} color={'#0A210F'}>Saltubolic Blogs</Heading>
       </Center>
       <Flex
         textAlign={'center'}
@@ -59,7 +59,7 @@ const Blog: React.FC<Props> = (props) => {
         direction={'column'}
         width={'full'}
       >
-        <SimpleGrid columns={1} spacing={'20'} mt={10} mx={'auto'}>
+        <SimpleGrid columns={1} spacing={'1'} mt={10} mx={'auto'}>
           {props.feed.map((post) => (
             <Post post={post} />
           ))}

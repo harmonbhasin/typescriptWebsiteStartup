@@ -61,7 +61,7 @@ export default function SmallWithLogoLeft() {
         align={{ base: 'center', md: 'center' }}
       >
         <Text>SCS</Text>
-        <Text>© 2022 Saltubolic Coaching Services. All rights reserved</Text>
+        <Text>© 2022 Saltubolic LLC. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton
             label={'Twitter'}

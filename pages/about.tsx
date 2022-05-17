@@ -2,6 +2,9 @@ import type { NextPage } from 'next'
 import { Box, Heading, Center, SimpleGrid } from '@chakra-ui/react'
 import Individual from '../src/components/about/biography'
 
+/**
+ * This page tells the users about both the coaches, Harmon and Michael.
+ */
 const About: NextPage = () => (
   <Box color={'#490b3d'}>
     <Center p={'5'}>
@@ -11,7 +14,7 @@ const About: NextPage = () => (
       columns={{ base: 1, md: 2 }}
       spacing={{ base: 5, lg: 8 }}
       px={8}
-    >
+    > {/*Use a simple grid to make tranforming the website from mobile to desktop easier */}
       <Individual
         name={'Harmon'}
         about={
