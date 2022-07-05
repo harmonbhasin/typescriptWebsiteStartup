@@ -5,7 +5,7 @@ import Router from 'next/router'
 import { PostProps } from '../../src/components/post'
 import { useSession } from 'next-auth/react'
 import { prisma } from '../../lib/prisma'
-import { Text, Flex, Heading, Button, Spacer, HStack } from '@chakra-ui/react'
+import { Text, Flex, Heading, Button, Spacer, Box } from '@chakra-ui/react'
 import remarkGfm from 'remark-gfm'
 
 //@ts-ignore
@@ -54,12 +54,13 @@ const Post: React.FC<PostProps> = (props) => {
   return (
     <Flex p={10} direction="column">
       <Heading size={'4xl'}>{props.title}</Heading>
-      <Heading size={'xl'}>{props.gist}</Heading>
+      <Heading size={'l'}>{props.gist}</Heading>
       <Flex>
         <Spacer />
         <Text>By {props?.author?.name || 'Unknown author'}</Text>
       </Flex>
       <ReactMarkdown children={props.content} remarkPlugins={[remarkGfm]} />
+      <Box h="350px" />
       <Flex>
         {!props.published && userHasValidSession && postBelongsToUser && (
           <Button

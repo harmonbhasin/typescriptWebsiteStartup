@@ -1,6 +1,5 @@
 import React from 'react'
 import Router from 'next/router'
-import ReactMarkdown from 'react-markdown'
 import { Flex, Heading, Text, Link, Divider } from '@chakra-ui/react'
 
 export type PostProps = {
@@ -38,9 +37,9 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
           justifyContent={'space-between'}
         >
           <Heading size={'3xl'}>{post.title}</Heading>
-          <Text fontSize={'xl'}>{post.gist} </Text>
+          <Text fontSize={'l'}>{post.gist} </Text>
           <Text textAlign={'right'}>{authorName}</Text>
-          <Divider/>
+          <Divider />
         </Flex>
       </Flex>
     </Link>
