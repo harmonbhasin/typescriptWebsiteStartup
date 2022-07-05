@@ -1,12 +1,12 @@
 import React from 'react'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Post, { PostProps } from '../src/components/post'
 import { prisma } from '../lib/prisma'
-import { Box, Center, Flex, Heading, SimpleGrid } from '@chakra-ui/react'
+import { Center, Flex, Heading, SimpleGrid } from '@chakra-ui/react'
 import { useSession } from 'next-auth/react'
 import Header from '../pages/header'
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const feed = await prisma.post.findMany({
     where: { published: true },
     include: {
@@ -29,7 +29,7 @@ const Blog: React.FC<Props> = (props) => {
       <>
         <Header />
         <Center>
-          <Heading color ={'#0A210F'}>Saltubolic Blogs</Heading>
+          <Heading color={'#0A210F'}>Saltubolic Blogs</Heading>
         </Center>
         <Flex
           textAlign={'center'}
@@ -50,7 +50,9 @@ const Blog: React.FC<Props> = (props) => {
   return (
     <Flex direction={'column'} p={10}>
       <Center>
-        <Heading size={'4xl'} color={'#0A210F'}>Saltubolic Blogs</Heading>
+        <Heading size={'4xl'} color={'#0A210F'}>
+          Saltubolic Blogs
+        </Heading>
       </Center>
       <Flex
         textAlign={'center'}
