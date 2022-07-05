@@ -1,13 +1,5 @@
 import type { NextPage } from 'next'
-import {
-  Box,
-  Image,
-  Flex,
-  Heading,
-  Container,
-  VStack,
-  Text,
-} from '@chakra-ui/react'
+import { Box, Heading, Container, VStack } from '@chakra-ui/react'
 import Stats from '../src/components/home/stats'
 import Speech from '../src/components/home/speechBubble'
 import Newsletter from '../src/components/home/newsletter'

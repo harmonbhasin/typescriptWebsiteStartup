@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import {
   Box,
   Flex,
@@ -7,7 +6,6 @@ import {
   IconButton,
   useDisclosure,
   Stack,
-  Image,
   Text,
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
@@ -40,7 +38,7 @@ const NavLink = ({ title, loc }: NavLinkProps) => (
   </Link>
 )
 
-export default function Simple() {
+export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -56,7 +54,7 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Text>Saltubolic Coaching Services</Text>
+            <Text>Saltubolic Coaching</Text>
             <HStack
               as={'nav'}
               spacing={4}

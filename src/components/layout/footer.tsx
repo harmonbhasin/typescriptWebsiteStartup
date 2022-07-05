@@ -3,12 +3,11 @@ import {
   chakra,
   Container,
   Stack,
-  Image,
   Text,
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react'
-import { FaInstagram, FaTwitter, FaTiktok } from 'react-icons/fa'
+import { FaInstagram, FaTwitter, FaTiktok, FaYoutube } from 'react-icons/fa'
 import { ReactNode } from 'react'
 
 interface ColorsProps {
@@ -48,7 +47,7 @@ const SocialButton = ({
   )
 }
 
-export default function SmallWithLogoLeft() {
+export default function Footer() {
   return (
     <Box bg={'#14591D'} color={'white'}>
       <Container
@@ -60,9 +59,14 @@ export default function SmallWithLogoLeft() {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Text>SCS</Text>
         <Text>© 2022 Saltubolic LLC. All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
+          <SocialButton
+            label={'Instagram'}
+            href={'https://www.instagram.com/saltubolic/'}
+          >
+            <FaInstagram />
+          </SocialButton>
           <SocialButton
             label={'Twitter'}
             href={'https://twitter.com/saltubolic'}
@@ -76,10 +80,10 @@ export default function SmallWithLogoLeft() {
             <FaTiktok />
           </SocialButton>
           <SocialButton
-            label={'Instagram'}
-            href={'https://www.instagram.com/saltubolic/'}
+            label={'Youtube'}
+            href={'https://www.youtube.com/channel/UC3Ihkq4KsC3wFzQtZ_dze3g'}
           >
-            <FaInstagram />
+            <FaYoutube />
           </SocialButton>
         </Stack>
       </Container>
