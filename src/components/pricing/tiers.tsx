@@ -52,7 +52,7 @@ export default function ThreeTierPricing() {
                 $
               </Text>
               <Text fontSize="5xl" fontWeight="900">
-                7.99
+                4.99
               </Text>
               <Text fontSize="3xl" color="gray.500">
                 /month
@@ -83,7 +83,7 @@ export default function ThreeTierPricing() {
               </ListItem>
             </List>
             <Box w="80%" pt={7}>
-              <Link href="https://buy.stripe.com/dR603i9HU6AObfO8wy">
+              <Link href="https://buy.stripe.com/fZe7vK9HU3oCabK7sw">
                 <Button
                   w="full"
                   color="#CA4862"
@@ -178,7 +178,7 @@ export default function ThreeTierPricing() {
                 $
               </Text>
               <Text fontSize="5xl" fontWeight="900">
-                22.99
+                19.99
               </Text>
               <Text fontSize="3xl" color="gray.500">
                 combo
@@ -193,11 +193,11 @@ export default function ThreeTierPricing() {
             <List spacing={3} textAlign="start" px={12}>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color={checkmark} />
-                $22.99 one time payment
+                $19.99 one time payment
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color={checkmark} />
-                $7.99/month after for SaltuBot
+                $4.99/month after for SaltuBot
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color={checkmark} />
@@ -209,7 +209,7 @@ export default function ThreeTierPricing() {
               </ListItem>
             </List>
             <Box w="80%" pt={7}>
-              <Link href="https://buy.stripe.com/14k4jy9HUe3gcjSfZ1">
+              <Link href="https://buy.stripe.com/4gw03i7zM8IWabK4gl">
                 <Button
                   w="full"
                   color="#CA4862"
