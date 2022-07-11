@@ -28,8 +28,10 @@ import {
   BsPerson,
   BsTwitter,
 } from 'react-icons/bs'
-import { FaTiktok, FaStripeS } from 'react-icons/fa'
+import { FaTiktok } from 'react-icons/fa'
 import { MdEmail, MdOutlineEmail } from 'react-icons/md'
+
+const color = '#CA4862'
 
 const ContactFormWithSocialButtons = () => {
   const { hasCopied, onCopy } = useClipboard('saltubolic@protonmail.com')
@@ -70,18 +72,8 @@ const ContactFormWithSocialButtons = () => {
                 md: '5xl',
               }}
             >
-              Buy Your Plan Today!
+              Ask Us Anything!
             </Heading>
-
-            <OrderedList>
-              <ListItem>Fill out your information below.</ListItem>
-              <ListItem>Pay through Stripe with the S-shaped button.</ListItem>
-              <ListItem>
-                Find a time for your consultation call through the
-                calendar-shaped button.
-              </ListItem>
-              <ListItem>Prepare to have your life changed!</ListItem>
-            </OrderedList>
 
             <Stack
               spacing={{ base: 4, md: 8, lg: 20 }}
@@ -104,7 +96,7 @@ const ContactFormWithSocialButtons = () => {
                     fontSize="3xl"
                     icon={<MdEmail />}
                     _hover={{
-                      bg: '#99AA38',
+                      bg: '#CA4862',
                       color: useColorModeValue('white', 'gray.700'),
                     }}
                     onClick={onCopy}
@@ -119,7 +111,7 @@ const ContactFormWithSocialButtons = () => {
                     size="lg"
                     icon={<BsTwitter size="28px" />}
                     _hover={{
-                      bg: '#99AA38',
+                      bg: '#CA4862',
                       color: useColorModeValue('white', 'gray.700'),
                     }}
                     isRound
@@ -133,7 +125,7 @@ const ContactFormWithSocialButtons = () => {
                     size="lg"
                     icon={<BsInstagram size="28px" />}
                     _hover={{
-                      bg: '#99AA38',
+                      bg: '#CA4862',
                       color: useColorModeValue('white', 'gray.700'),
                     }}
                     isRound
@@ -147,33 +139,7 @@ const ContactFormWithSocialButtons = () => {
                     size="lg"
                     icon={<FaTiktok size="28px" />}
                     _hover={{
-                      bg: '#99AA38',
-                      color: useColorModeValue('white', 'gray.700'),
-                    }}
-                    isRound
-                  />
-                </Link>
-                <Link href="https://buy.stripe.com/3cs4jy8DQf7k97G144">
-                  <IconButton
-                    aria-label="venmo"
-                    variant="ghost"
-                    size="lg"
-                    icon={<FaStripeS size="28px" />}
-                    _hover={{
-                      bg: '#99AA38',
-                      color: useColorModeValue('white', 'gray.700'),
-                    }}
-                    isRound
-                  />
-                </Link>
-                <Link href="https://calendly.com/harmonb/30min">
-                  <IconButton
-                    aria-label="venmo"
-                    variant="ghost"
-                    size="lg"
-                    icon={<BsFillCalendarCheckFill size="28px" />}
-                    _hover={{
-                      bg: '#99AA38',
+                      bg: '#CA4862',
                       color: useColorModeValue('white', 'gray.700'),
                     }}
                     isRound
@@ -242,10 +208,10 @@ const ContactFormWithSocialButtons = () => {
                   </FormControl>
 
                   <Button
-                    bg="#14591D"
+                    bg="#CA4862"
                     color="white"
                     _hover={{
-                      bg: '#99AA38',
+                      bg: '#f16764',
                     }}
                     isFullWidth
                     isLoading={state === 'submitting'}

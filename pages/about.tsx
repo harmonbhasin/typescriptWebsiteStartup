@@ -14,7 +14,8 @@ const About: NextPage = () => (
       columns={{ base: 1, md: 2 }}
       spacing={{ base: 5, lg: 8 }}
       px={8}
-    > {/*Use a simple grid to make tranforming the website from mobile to desktop easier */}
+    >
+      {/*Use a simple grid to make tranforming the website from mobile to desktop easier */}
       <Individual
         name={'Harmon'}
         about={

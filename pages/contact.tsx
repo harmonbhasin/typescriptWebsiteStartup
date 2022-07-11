@@ -6,7 +6,7 @@ import SubmitInfo from '../src/components/contactForm'
  * This page is used to submit contact information and buy a program.
  */
 const Contact: NextPage = () => (
-  <Box color={'#0A210F'}>
+  <Box color={'black'}>
     <SubmitInfo />
     <Box h={100}></Box>
   </Box>

@@ -3,7 +3,16 @@ import { GetServerSideProps } from 'next'
 import { useSession, getSession } from 'next-auth/react'
 import Post, { PostProps } from '../src/components/post'
 import { prisma } from '../lib/prisma'
-import { Box, Button, Center, Flex, Heading, SimpleGrid } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  Heading,
+  SimpleGrid,
+  Container,
+  Grid,
+} from '@chakra-ui/react'
 import Router from 'next/router'
 
 /**
@@ -52,28 +61,32 @@ const Drafts: React.FC<Props> = (props) => {
   }
 
   return (
-    <Box>
-       <Center>
-        <Heading size={'4xl'} color={'#0A210F'}>My Drafts</Heading>
-      </Center>
+    <Container maxWidth={'container.xl'} centerContent>
+      <Grid p={10} gap={6}>
+        <Center>
+          <Heading size={'4xl'} color={'#0A210F'}>
+            My Drafts
+          </Heading>
+        </Center>
         <Flex
-        textAlign={'center'}
-        pt={10}
-        justifyContent={'center'}
-        direction={'column'}
-        width={'full'}
-      >
-        <SimpleGrid columns={1} spacing={'1'} mt={10} mx={'auto'}>
-          {props.drafts.map((post) => (
-            <Post post={post} />
-          ))}
-        </SimpleGrid>
-      </Flex>
-      <Box height = {'100'}/>
-      <Button bg="#14591D"
-            color="white" onClick={() => Router.push('/blog')}>Back</Button>
-      <Box height = {'600'} />
-    </Box>
+          textAlign={'center'}
+          pt={10}
+          justifyContent={'center'}
+          direction={'column'}
+          width={'full'}
+        >
+          <SimpleGrid columns={1} spacing={'1'} mt={10} mx={'auto'}>
+            {props.drafts.map((post) => (
+              <Post post={post} />
+            ))}
+          </SimpleGrid>
+        </Flex>
+      </Grid>
+      <Button bg="#14591D" color="white" onClick={() => Router.push('/blog')}>
+        Back
+      </Button>
+      <Box height={'450'} />
+    </Container>
   )
 }
 

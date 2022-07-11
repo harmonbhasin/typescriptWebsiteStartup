@@ -83,7 +83,7 @@ const Draft: React.FC = () => {
             }
           />
         </FormControl>
-        <HStack>
+        <HStack spacing="20">
           <Button
             bg="#14591D"
             color="white"

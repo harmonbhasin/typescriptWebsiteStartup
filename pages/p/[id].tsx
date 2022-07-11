@@ -5,7 +5,18 @@ import Router from 'next/router'
 import { PostProps } from '../../src/components/post'
 import { useSession } from 'next-auth/react'
 import { prisma } from '../../lib/prisma'
-import { Text, Flex, Heading, Button, Spacer, Box } from '@chakra-ui/react'
+import {
+  Text,
+  Flex,
+  Heading,
+  Button,
+  Spacer,
+  Box,
+  Container,
+  Grid,
+  Divider,
+  Stack,
+} from '@chakra-ui/react'
 import remarkGfm from 'remark-gfm'
 
 //@ts-ignore
@@ -52,16 +63,18 @@ const Post: React.FC<PostProps> = (props) => {
   }
 
   return (
-    <Flex p={10} direction="column">
-      <Heading size={'4xl'}>{props.title}</Heading>
-      <Heading size={'l'}>{props.gist}</Heading>
-      <Flex>
-        <Spacer />
-        <Text>By {props?.author?.name || 'Unknown author'}</Text>
-      </Flex>
-      <ReactMarkdown children={props.content} remarkPlugins={[remarkGfm]} />
-      <Box h="350px" />
-      <Flex>
+    <Container maxWidth={'container.xl'} color="#CA4862" centerContent>
+      <Grid p={10} gap={6}>
+        <Heading size={'4xl'}>{props.title}</Heading>
+        <Heading size={'l'}>{props.gist}</Heading>
+        <Flex>
+          <Spacer />
+          <Text>By {props?.author?.name || 'Unknown author'}</Text>
+        </Flex>
+        <Divider />
+        <ReactMarkdown children={props.content} remarkPlugins={[remarkGfm]} />
+      </Grid>
+      <Stack spacing={{ sm: 200, md: 300 }} direction="row">
         {!props.published && userHasValidSession && postBelongsToUser && (
           <Button
             bg="#14591D"
@@ -74,7 +87,6 @@ const Post: React.FC<PostProps> = (props) => {
             Publish
           </Button>
         )}
-        <Spacer />
         {userHasValidSession && postBelongsToUser && (
           <Button
             bg="#14591D"
@@ -87,8 +99,9 @@ const Post: React.FC<PostProps> = (props) => {
             Delete
           </Button>
         )}
-      </Flex>
-    </Flex>
+      </Stack>
+      <Box h="350px" />
+    </Container>
   )
 }
 

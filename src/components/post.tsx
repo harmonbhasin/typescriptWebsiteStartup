@@ -14,7 +14,12 @@ export type PostProps = {
   published: boolean
 }
 
-const Post: React.FC<{ post: PostProps }> = ({ post }) => {
+const colors = ['#53BBB7', '#8FDEB4', '#F16764']
+
+const Post: React.FC<{ post: PostProps; index: number }> = ({
+  post,
+  index,
+}) => {
   const authorName = post.author ? post.author.name : 'Unknown author'
   return (
     <Link
@@ -29,7 +34,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
         p={5}
         justifyContent={'space-between'}
         position={'relative'}
-        color={'#0A210F'}
+        color={colors[index % 3]}
       >
         <Flex
           direction={'column'}
@@ -39,7 +44,7 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
           <Heading size={'3xl'}>{post.title}</Heading>
           <Text fontSize={'l'}>{post.gist} </Text>
           <Text textAlign={'right'}>{authorName}</Text>
-          <Divider />
+          <Divider borderColor={colors[index % 3]} borderWidth="1.5px" />
         </Flex>
       </Flex>
     </Link>

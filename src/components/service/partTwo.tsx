@@ -11,9 +11,11 @@ import {
 } from '@chakra-ui/react'
 import { MdCheckCircle } from 'react-icons/md'
 
+const checkmark = '#8FDEB4'
+
 const partTwo = () => {
   return (
-    <Box p={10} backgroundColor={'#14591D'}>
+    <Box p={10} backgroundColor={'#52bbb7'}>
       <Center>
         <Heading color={'white'} size={'4xl'}>
           Workout Splits
@@ -26,23 +28,23 @@ const partTwo = () => {
           spacing={{ base: '5', md: '10' }}
         >
           <ListItem>
-            <ListIcon as={MdCheckCircle} color="#D9D982" />
+            <ListIcon as={MdCheckCircle} color={checkmark} />
             Full Body Workouts
           </ListItem>
           <ListItem>
-            <ListIcon as={MdCheckCircle} color="#D9D982" />
+            <ListIcon as={MdCheckCircle} color={checkmark} />
             Upper/Lower Body Workouts
           </ListItem>
           <ListItem>
-            <ListIcon as={MdCheckCircle} color="#D9D982" />
+            <ListIcon as={MdCheckCircle} color={checkmark} />
             Push/Pull/Leg Workouts
           </ListItem>
           <ListItem>
-            <ListIcon as={MdCheckCircle} color="#D9D982" />
+            <ListIcon as={MdCheckCircle} color={checkmark} />
             Arnold Split Workouts
           </ListItem>
           <ListItem>
-            <ListIcon as={MdCheckCircle} color="#D9D982" />
+            <ListIcon as={MdCheckCircle} color={checkmark} />
             Custom Splits
           </ListItem>
         </List>

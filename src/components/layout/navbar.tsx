@@ -15,12 +15,13 @@ interface NavLinkProps {
   loc: string
 }
 
-const Links = [
+const mainLinks = [
   { title: 'Home', loc: '/' },
-  { title: 'About', loc: '/about' },
+  { title: 'About Us', loc: '/about' },
   { title: 'Services', loc: '/services' },
   { title: 'Blog', loc: '/blog' },
-  { title: 'Contact', loc: '/contact' },
+  { title: 'Contact Us', loc: '/contact' },
+  { title: 'Pricing', loc: '/pricing' },
 ]
 
 const NavLink = ({ title, loc }: NavLinkProps) => (
@@ -30,11 +31,13 @@ const NavLink = ({ title, loc }: NavLinkProps) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: '#99AA38',
+      color: '#F16764',
     }}
     href={loc}
   >
-    {title}
+    <Text as="b" fontSize="xl">
+      {title}
+    </Text>
   </Link>
 )
 
@@ -43,7 +46,7 @@ export default function NavBar() {
 
   return (
     <>
-      <Box bg={'#14591D'} color={'white'} px={4}>
+      <Box bg={'#CA4862'} color={'white'} px={7}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -53,24 +56,25 @@ export default function NavBar() {
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
-            <Text>Saltubolic Coaching</Text>
+          <Text as="b" fontSize="2xl">
+            Saltubolic
+          </Text>
+          <Flex alignItems={'center'}>
             <HStack
               as={'nav'}
               spacing={4}
               display={{ base: 'none', md: 'flex' }}
             >
-              {Links.map((link) => (
+              {mainLinks.map((link) => (
                 <NavLink title={link.title} loc={link.loc} />
               ))}
             </HStack>
-          </HStack>
+          </Flex>
         </Flex>
-
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
+              {mainLinks.map((link) => (
                 <NavLink title={link.title} loc={link.loc} />
               ))}
             </Stack>

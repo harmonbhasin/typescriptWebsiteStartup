@@ -29,7 +29,7 @@ const Blog: React.FC<Props> = (props) => {
       <>
         <Header />
         <Center>
-          <Heading color={'#0A210F'}>Saltubolic Blogs</Heading>
+          <Heading color={'#F16764'}>Saltubolic Blogs</Heading>
         </Center>
         <Flex
           textAlign={'center'}
@@ -39,8 +39,8 @@ const Blog: React.FC<Props> = (props) => {
           width={'full'}
         >
           <SimpleGrid columns={1} spacing={'20'} mt={10} mx={'auto'}>
-            {props.feed.map((post) => (
-              <Post post={post} />
+            {props.feed.map((post, index) => (
+              <Post post={post} index={index} />
             ))}
           </SimpleGrid>
         </Flex>
@@ -50,7 +50,7 @@ const Blog: React.FC<Props> = (props) => {
   return (
     <Flex direction={'column'} p={10}>
       <Center>
-        <Heading size={'4xl'} color={'#0A210F'}>
+        <Heading size={'4xl'} color={'#CA4862'}>
           Saltubolic Blogs
         </Heading>
       </Center>
@@ -62,8 +62,8 @@ const Blog: React.FC<Props> = (props) => {
         width={'full'}
       >
         <SimpleGrid columns={1} spacing={'1'} mt={10} mx={'auto'}>
-          {props.feed.map((post) => (
-            <Post post={post} />
+          {props.feed.map((post, index) => (
+            <Post post={post} index={index} />
           ))}
         </SimpleGrid>
       </Flex>

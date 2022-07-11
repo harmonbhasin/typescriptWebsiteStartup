@@ -6,6 +6,7 @@ declare namespace NodeJS {
     GOOGLE_ID: string
     GOOGLE_SECRET: string
     NOTION_KEY: string
-    NOTION_DATABASE_ID: string
+    NOTION_EMAIL_DATABASE_ID: string
+    NOTION_CLIENT_DATABASE_ID: string
   }
 }
