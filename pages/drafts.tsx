@@ -76,8 +76,8 @@ const Drafts: React.FC<Props> = (props) => {
           width={'full'}
         >
           <SimpleGrid columns={1} spacing={'1'} mt={10} mx={'auto'}>
-            {props.drafts.map((post) => (
-              <Post post={post} />
+            {props.drafts.map((post, index) => (
+              <Post post={post} index={index} />
             ))}
           </SimpleGrid>
         </Flex>
