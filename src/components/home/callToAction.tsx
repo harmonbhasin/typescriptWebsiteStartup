@@ -53,9 +53,9 @@ export default function CallToActionWithAnnotation() {
               </Text>
             </Heading>
             <Text color={'white'}>
-              Monetize your content by charging your most loyal readers and
-              reward them loyalty points. Give back to your loyal readers by
-              granting them access to your pre-releases and sneak-peaks.
+              We understand that everyone has busy lives, we're here to help you
+              integrate fitness and health into your life. Just take the leap
+              and you won't regret it.
             </Text>
             <Stack
               direction={'column'}

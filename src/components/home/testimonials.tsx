@@ -154,9 +154,9 @@ export default function GridBlurredBackdrop() {
         >
           See why over{' '}
           <chakra.strong color={useColorModeValue('gray.700', 'gray.50')}>
-            150,000+
+            20+
           </chakra.strong>{' '}
-          influencers use EEZY to manage their social media content!
+          students use Saltubolic as a way to take control of their health!
         </chakra.h2>
       </Box>
       <SimpleGrid
