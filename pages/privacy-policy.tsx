@@ -1,8 +1,5 @@
 import type { NextPage } from 'next'
 import { Box, Heading, Container, VStack, Text } from '@chakra-ui/react'
-import Stats from '../src/components/home/stats'
-import Speech from '../src/components/home/speechBubble'
-import Newsletter from '../src/components/home/newsletter'
 
 /**
  * This is the main page that the website brings all new users to.
