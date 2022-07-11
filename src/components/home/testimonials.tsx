@@ -20,7 +20,7 @@ const testimonials = [
     role: 'Student at University of Wisconsin-Madison',
     content:
       "Anytime I have any questions I can text either coach, and I'm guaranteed to get a response within the hour, if not sooner. I also love how they've built a community where I feel like I have other people to workout with.",
-    avatar: '/clients/carlene.jpg',
+    avatar: '/clients/Carlene.jpg',
   },
   {
     name: 'Arthur S.',
