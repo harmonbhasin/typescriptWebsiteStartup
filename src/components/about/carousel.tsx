@@ -22,6 +22,11 @@ interface CarouselProps {
   cards: string[]
 }
 
+/**
+ * Removed for professionalism
+ * @param param0
+ * @returns
+ */
 export default function Carousel({ cards }: CarouselProps) {
   // As we have used custom buttons, we need a reference variable to
   // change the state

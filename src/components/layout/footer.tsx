@@ -17,15 +17,25 @@ import React, { ReactNode, useState, ChangeEvent } from 'react'
 import { FaInstagram, FaTwitter, FaYoutube, FaTiktok } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 
+interface FooterColorProps {
+  main: string
+  hoverColor: string
+  submitColor: any
+}
+
+interface SocialButtonProps {
+  children: ReactNode
+  label: string
+  href: string
+  hoverSettings: any
+}
+
 const SocialButton = ({
   children,
   label,
   href,
-}: {
-  children: ReactNode
-  label: string
-  href: string
-}) => {
+  hoverSettings,
+}: SocialButtonProps) => {
   return (
     <chakra.button
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
@@ -39,9 +49,7 @@ const SocialButton = ({
       alignItems={'center'}
       justifyContent={'center'}
       transition={'background 0.3s ease'}
-      _hover={{
-        bg: '#f16764',
-      }}
+      _hover={hoverSettings}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
@@ -58,20 +66,20 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 }
 
 const companyLinks = [
-  { title: 'About Us', loc: '/about' },
+  { title: 'About', loc: '/about' },
   { title: 'Blog', loc: '/blog' },
   { title: 'Services', loc: '/services' },
-  { title: 'Pricing', loc: '/' },
+  { title: 'Pricing', loc: '/pricing' },
 ]
 
 const supportLinks = [
-  { title: 'Contact Us', loc: '/contact' },
+  { title: 'Contact', loc: '/contact' },
   { title: 'Terms of Service', loc: '/' },
   { title: 'Legal', loc: '/' },
   { title: 'Privacy Policy', loc: '/' },
 ]
 
-export default function LargeWithNewsletter() {
+const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
   const [email, setEmail] = useState('')
   const [error, setError] = useState(false)
   const [state, setState] = useState<'initial' | 'submitting' | 'success'>(
@@ -99,7 +107,7 @@ export default function LargeWithNewsletter() {
   }
 
   return (
-    <Box bg={'#CA4862'} color={'white'}>
+    <Box bg={main} color={'white'}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
@@ -116,18 +124,21 @@ export default function LargeWithNewsletter() {
               <SocialButton
                 label={'Instagram'}
                 href={'https://www.instagram.com/saltubolic/'}
+                hoverSettings={{ bg: hoverColor }}
               >
                 <FaInstagram />
               </SocialButton>
               <SocialButton
                 label={'Twitter'}
                 href={'https://twitter.com/saltubolic'}
+                hoverSettings={{ bg: hoverColor }}
               >
                 <FaTwitter />
               </SocialButton>
               <SocialButton
                 label={'Tik Tok'}
                 href={'https://www.tiktok.com/@saltubolic'}
+                hoverSettings={{ bg: hoverColor }}
               >
                 <FaTiktok />
               </SocialButton>
@@ -136,6 +147,7 @@ export default function LargeWithNewsletter() {
                 href={
                   'https://www.youtube.com/channel/UC3Ihkq4KsC3wFzQtZ_dze3g'
                 }
+                hoverSettings={{ bg: hoverColor }}
               >
                 <FaYoutube />
               </SocialButton>
@@ -159,7 +171,8 @@ export default function LargeWithNewsletter() {
               <FormControl>
                 <Input
                   placeholder={'Your email address'}
-                  bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+                  bg={'blackAlpha.100'}
+                  _placeholder={{ opacity: 1, color: 'white' }}
                   border={0}
                   _focus={{
                     bg: 'whiteAlpha.300',
@@ -176,11 +189,9 @@ export default function LargeWithNewsletter() {
               </FormControl>
               <FormControl w={{ base: '100%', md: '40%' }}>
                 <IconButton
-                  bg={'#f16764'}
+                  bg={hoverColor}
                   color={'white'}
-                  _hover={{
-                    bg: '#c93f3c',
-                  }}
+                  _hover={submitColor}
                   aria-label="Subscribe"
                   isLoading={state === 'submitting'}
                   type={state === 'success' ? 'button' : 'submit'}
@@ -194,3 +205,5 @@ export default function LargeWithNewsletter() {
     </Box>
   )
 }
+
+export default Footer

@@ -55,8 +55,9 @@ export default function SplitWithImage() {
           </Text>
           <Heading>A Flexible Coaching Service</Heading>
           <Text color={'white'} fontSize={'lg'}>
-            We understand everyone has busy schedules, we enrich your life by
-            making understanding your body easier.
+            Everyone has busy schedules, we're here to enrich your life by
+            providing you with the tools you need to take control of your
+            health.
           </Text>
           <Stack spacing={4} divider={<StackDivider borderColor={'white'} />}>
             <Feature

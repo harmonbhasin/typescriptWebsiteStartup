@@ -1,10 +1,13 @@
-import React from 'react'
-import { GetServerSideProps } from 'next'
+import React, { ReactNode } from 'react'
+import { GetServerSideProps, NextPage } from 'next'
 import Post, { PostProps } from '../src/components/post'
 import { prisma } from '../lib/prisma'
 import { Center, Flex, Heading, SimpleGrid } from '@chakra-ui/react'
 import { useSession } from 'next-auth/react'
 import Header from '../pages/header'
+import BlogLayout from '../src/components/layout/blogLayout'
+
+import type { ReactElement } from 'react'
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const feed = await prisma.post.findMany({
@@ -22,7 +25,12 @@ type Props = {
   feed: PostProps[]
 }
 
-const Blog: React.FC<Props> = (props) => {
+export type NextPageWithLayout = NextPage &
+  Props & {
+    getLayout?: (page: ReactElement) => ReactNode
+  }
+
+const Blog = (props: NextPageWithLayout) => {
   const { data: session, status } = useSession()
   if (session) {
     return (
@@ -69,6 +77,10 @@ const Blog: React.FC<Props> = (props) => {
       </Flex>
     </Flex>
   )
+}
+
+Blog.getLayout = (page: ReactElement) => {
+  return <BlogLayout>{page}</BlogLayout>
 }
 
 export default Blog

@@ -63,7 +63,7 @@ const Post: React.FC<PostProps> = (props) => {
   }
 
   return (
-    <Container maxWidth={'container.xl'} color="#CA4862" centerContent>
+    <Container maxWidth={'container.xl'} color="#CA4682" centerContent>
       <Grid p={10} gap={6}>
         <Heading size={'4xl'}>{props.title}</Heading>
         <Heading size={'l'}>{props.gist}</Heading>

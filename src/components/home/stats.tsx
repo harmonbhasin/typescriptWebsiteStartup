@@ -84,21 +84,22 @@ const Statistics = () => {
           <GridItem w="100%">
             <Flex flexDirection={'column'}>
               <Text fontSize={'4xl'} fontWeight={'bold'}>
-                100%
+                70%
               </Text>
               <Box fontSize={'sm'}>
-                of clients broke through plateaues in as few as two weeks
+                of clients broke through plateaus they had for months in only 3
+                weeks.
               </Box>
             </Flex>
           </GridItem>
           <GridItem w="100%">
             <Flex flexDirection={'column'}>
               <Text fontSize={'4xl'} fontWeight={'bold'}>
-                75%
+                80%
               </Text>
               <Box fontSize={'sm'}>
-                of clients reach their targeted weight goals before they had
-                planned
+                of clients reach their targeted weight goals before they
+                expected.
               </Box>
             </Flex>
           </GridItem>

@@ -53,9 +53,13 @@ export default function CallToActionWithAnnotation() {
               </Text>
             </Heading>
             <Text color={'white'}>
-              We understand that everyone has busy lives, we're here to help you
-              integrate fitness and health into your life. Just take the leap
-              and you won't regret it.
+              As college students who are very involved on campus and don't want
+              to give up our social lives, we understand that it can be
+              difficult to stay healthy while still achieving all of your other
+              goals. We understand the struggle of finding a balance, and make
+              it our goal to integrate fitness and health into your life in a
+              reasonable manner so that you can reap the benefits for years to
+              come.
             </Text>
             <Stack
               direction={'column'}
@@ -102,7 +106,7 @@ export default function CallToActionWithAnnotation() {
                   transform={'rotate(10deg)'}
                   color={'white'}
                 >
-                  Only $15 for a program
+                  Only $14.99 for a program
                 </Text>
               </Box>
             </Stack>

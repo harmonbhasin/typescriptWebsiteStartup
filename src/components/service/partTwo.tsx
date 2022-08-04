@@ -29,19 +29,23 @@ const partTwo = () => {
         >
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
-            Full Body Workouts
+            Full Body Splits
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
-            Upper/Lower Body Workouts
+            Upper/Lower Splits
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
-            Push/Pull/Leg Workouts
+            Push/Pull/Leg Splits
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
-            Arnold Split Workouts
+            Arnold Splits
+          </ListItem>
+          <ListItem>
+            <ListIcon as={MdCheckCircle} color={checkmark} />
+            Powerbuilding Splits
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
@@ -49,7 +53,7 @@ const partTwo = () => {
           </ListItem>
         </List>
         <Spacer />
-        <Image src="/harmon/harmon2.jpg" boxSize={'300px'} />
+        <Image src="/harmon/harmon2.jpg" boxSize={'350px'} />
       </Flex>
     </Box>
   )

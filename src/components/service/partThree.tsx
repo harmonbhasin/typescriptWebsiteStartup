@@ -22,9 +22,13 @@ const partThree = () => {
         </Heading>
       </Center>
       <Flex direction={{ base: 'column', md: 'row' }}>
-        <Image src="/clients/buddies.jpg" boxSize={'300px'} />
+        <Image src="/clients/buddies.jpg" boxSize={'350px'} />
         <Spacer />
         <List py={{ base: '7', md: '0' }} spacing={{ base: '5', md: '10' }}>
+          <ListItem>
+            <ListIcon as={MdCheckCircle} color={checkmark} />
+            Student-Run so we understand the struggles of students
+          </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
             Only $14.99 for your first 6 week program
@@ -39,7 +43,7 @@ const partThree = () => {
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
-            Science-based programs
+            Science & experience tested programs
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />

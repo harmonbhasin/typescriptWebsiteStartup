@@ -1,10 +1,13 @@
-import type { NextPage } from 'next'
 import { Text, Heading, Flex, Container } from '@chakra-ui/react'
 import Tiers from '../src/components/pricing/tiers'
+import PricingLayout from '../src/components/layout/pricingLayout'
+
+import type { ReactElement } from 'react'
+import type { NextPageWithLayout } from './_app'
 
 const color = 'black'
 
-const Pricing: NextPage = () => {
+const Pricing: NextPageWithLayout = () => {
   return (
     <Flex direction="column" align="center" p="10" color={color}>
       <Text as="b" fontSize={{ base: '4xl', md: '6xl' }}>
@@ -21,6 +24,10 @@ const Pricing: NextPage = () => {
       <Tiers />
     </Flex>
   )
+}
+
+Pricing.getLayout = (page: ReactElement) => {
+  return <PricingLayout>{page}</PricingLayout>
 }
 
 export default Pricing

@@ -13,26 +13,31 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 interface NavLinkProps {
   title: string
   loc: string
+  hoverSettings: any
+}
+
+interface NavBarColorProps {
+  main: string
+  textColor: string
+  hoverColor: string
 }
 
 const mainLinks = [
   { title: 'Home', loc: '/' },
-  { title: 'About Us', loc: '/about' },
+  { title: 'About', loc: '/about' },
   { title: 'Services', loc: '/services' },
   { title: 'Blog', loc: '/blog' },
-  { title: 'Contact Us', loc: '/contact' },
+  { title: 'Contact', loc: '/contact' },
   { title: 'Pricing', loc: '/pricing' },
 ]
 
-const NavLink = ({ title, loc }: NavLinkProps) => (
+const NavLink = ({ title, loc, hoverSettings }: NavLinkProps) => (
   <Link
     px={2}
     py={1}
     rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      color: '#F16764',
-    }}
+    // Need to change this color for duplicate
+    _hover={hoverSettings}
     href={loc}
   >
     <Text as="b" fontSize="xl">
@@ -41,12 +46,12 @@ const NavLink = ({ title, loc }: NavLinkProps) => (
   </Link>
 )
 
-export default function NavBar() {
+const NavBar = ({ main, textColor, hoverColor }: NavBarColorProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
-      <Box bg={'#CA4862'} color={'white'} px={7}>
+      <Box bg={main} color={textColor} px={7}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -66,7 +71,11 @@ export default function NavBar() {
               display={{ base: 'none', md: 'flex' }}
             >
               {mainLinks.map((link) => (
-                <NavLink title={link.title} loc={link.loc} />
+                <NavLink
+                  title={link.title}
+                  loc={link.loc}
+                  hoverSettings={{ textDecoration: 'none', color: hoverColor }}
+                />
               ))}
             </HStack>
           </Flex>
@@ -75,7 +84,11 @@ export default function NavBar() {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {mainLinks.map((link) => (
-                <NavLink title={link.title} loc={link.loc} />
+                <NavLink
+                  title={link.title}
+                  loc={link.loc}
+                  hoverSettings={{ textDecoration: 'none', color: hoverColor }}
+                />
               ))}
             </Stack>
           </Box>
@@ -84,3 +97,5 @@ export default function NavBar() {
     </>
   )
 }
+
+export default NavBar

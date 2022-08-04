@@ -20,12 +20,12 @@ const partOne = () => {
         <Heading size={'4xl'}>You Get</Heading>
       </Center>
       <Flex py={5} direction={{ base: 'column', md: 'row' }}>
-        <Image src="/michael/michael0.jpg" boxSize={'300px'} />
+        <Image src="/michael/michael0.jpg" boxSize={'350px'} />
         <Spacer />
         <List py={{ base: '7', md: '0' }} spacing={{ base: '5', md: '10' }}>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
-            Custom workout program geared towards your goals
+            Custom workout program crafted on Google Sheets
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
@@ -41,7 +41,11 @@ const partOne = () => {
           </ListItem>
           <ListItem>
             <ListIcon as={MdCheckCircle} color={checkmark} />
-            Access to Harmon & Michael from 10 am - 10 pm for advice
+            24 / 7 access to Harmon & Michael for advice
+          </ListItem>
+          <ListItem>
+            <ListIcon as={MdCheckCircle} color={checkmark} />
+            Ability to change your life forever
           </ListItem>
         </List>
       </Flex>

@@ -90,7 +90,7 @@ export default function ThreeTierPricing() {
                   borderColor={'#CA4862'}
                   variant="outline"
                 >
-                  Preorder now
+                  Buy now
                 </Button>
               </Link>
             </Box>

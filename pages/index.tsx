@@ -1,9 +1,12 @@
-import type { NextPage } from 'next'
 import { Box, Text, VStack } from '@chakra-ui/react'
 import Stats from '../src/components/home/stats'
 import OurStory from '../src/components/home/ourStory'
 import CallToActionWithAnnotation from '../src/components/home/callToAction'
 import Testimonial from '../src/components/home/testimonials'
+import Layout from '../src/components/layout/mainLayout'
+
+import type { ReactElement } from 'react'
+import type { NextPageWithLayout } from './_app'
 
 /**
  * This is the main page that the website brings all new users to.
@@ -11,7 +14,7 @@ import Testimonial from '../src/components/home/testimonials'
  * the testimonials from clients, the statistics about the our clients,
  * and the newsletter.
  */
-const Home: NextPage = () => (
+const Home: NextPageWithLayout = () => (
   <>
     <Box p={10} bg={'#CA4862'} color={'white'}>
       <VStack>
@@ -30,5 +33,9 @@ const Home: NextPage = () => (
     <Testimonial />
   </>
 )
+
+Home.getLayout = (page: ReactElement) => {
+  return <Layout>{page}</Layout>
+}
 
 export default Home
