@@ -5,6 +5,7 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
+// https://www.brockherion.dev/blog/posts/creating-per-page-layouts-with-nextjs-typescript-trcp-and-nextauth/
 export default function Layout({ children }: LayoutProps) {
   return (
     <>

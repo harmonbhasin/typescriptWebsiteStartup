@@ -51,7 +51,7 @@ const Statistics = () => {
     // Declare the async data fetching function
     const fetchData = async () => {
       // Get the data from the api
-      const data = await fetch('/api/post/numClients', {
+      const data = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: '',
