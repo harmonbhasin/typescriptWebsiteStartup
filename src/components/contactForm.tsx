@@ -97,7 +97,7 @@ const ContactFormWithSocialButtons = () => {
                     icon={<MdEmail />}
                     _hover={{
                       bg: '#CA4862',
-                      color: useColorModeValue('white', 'gray.700'),
+                      color: useColorModeValue('#FFFAFA', 'gray.700'),
                     }}
                     onClick={onCopy}
                     isRound
@@ -112,7 +112,7 @@ const ContactFormWithSocialButtons = () => {
                     icon={<BsTwitter size="28px" />}
                     _hover={{
                       bg: '#CA4862',
-                      color: useColorModeValue('white', 'gray.700'),
+                      color: useColorModeValue('#FFFAFA', 'gray.700'),
                     }}
                     isRound
                   />
@@ -126,7 +126,7 @@ const ContactFormWithSocialButtons = () => {
                     icon={<BsInstagram size="28px" />}
                     _hover={{
                       bg: '#CA4862',
-                      color: useColorModeValue('white', 'gray.700'),
+                      color: useColorModeValue('#FFFAFA', 'gray.700'),
                     }}
                     isRound
                   />
@@ -140,7 +140,7 @@ const ContactFormWithSocialButtons = () => {
                     icon={<FaTiktok size="28px" />}
                     _hover={{
                       bg: '#CA4862',
-                      color: useColorModeValue('white', 'gray.700'),
+                      color: useColorModeValue('#FFFAFA', 'gray.700'),
                     }}
                     isRound
                   />
@@ -148,7 +148,7 @@ const ContactFormWithSocialButtons = () => {
               </Stack>
 
               <Box
-                bg={useColorModeValue('white', 'gray.700')}
+                bg={useColorModeValue('#FFFAFA', 'gray.700')}
                 borderRadius="lg"
                 p={8}
                 color={useColorModeValue('gray.700', 'whiteAlpha.900')}
@@ -209,7 +209,7 @@ const ContactFormWithSocialButtons = () => {
 
                   <Button
                     bg="#CA4862"
-                    color="white"
+                    color="#FFFAFA"
                     _hover={{
                       bg: '#f16764',
                     }}

@@ -7,46 +7,138 @@ import {
   List,
   ListItem,
   ListIcon,
+  Divider,
+  Center,
 } from '@chakra-ui/react'
-import { MdCheckCircle } from 'react-icons/md'
+import { MdCheck } from 'react-icons/md'
 
-interface ProductProps {
+export type ProductProps = {
   name: string
   description: string
   price: string
   features: string[]
+  path: string
+  special: boolean
 }
 
-const Product = ({ name, description, price, features }: ProductProps) => (
-  <Box _hover={{ bg: '#69D29A' }} p={3}>
-    <VStack>
-      <Text as="b" fontSize={'3xl'}>
-        {name}
-      </Text>
-      <Text>{description}</Text>
-      <HStack>
-        <Text as="b" fontSize={'6xl'}>
-          ${price}
-        </Text>
-        <VStack>
-          <Text>per</Text>
-          <Text>month</Text>
-        </VStack>
-      </HStack>
-      <Button bg={'#40C67F'} _hover={{ bg: 'white', color: '#40C67F' }}>
-        Subscribe
-      </Button>
-      <Text>This includes:</Text>
-      <List>
-        {features.map((feature) => (
-          <ListItem>
-            <ListIcon as={MdCheckCircle} color={'#54CC8C'} />
-            {feature}
-          </ListItem>
-        ))}
-      </List>
-    </VStack>
-  </Box>
-)
+export const Product = ({
+  name,
+  description,
+  price,
+  features,
+  path,
+  special,
+}: ProductProps) => {
+  {
+    if (special) {
+      return (
+        <Box
+          _hover={{ bg: '#69D29A' }}
+          bg="#8FdEb4"
+          h={{ base: '600px', md: '550px' }}
+          shadow="2xl"
+          borderRadius={'xl'}
+        >
+          <Box bg={'#7DD8A7'} borderTopRadius="xl">
+            <Center>
+              <Text
+                textTransform="uppercase"
+                py={1.5}
+                color={'#FFFAFA'}
+                fontSize="l"
+                fontWeight="600"
+              >
+                Most Popular
+              </Text>
+            </Center>
+          </Box>
+          <Box py={5} px={5}>
+            <VStack align={'normal'}>
+              <Text as="b" fontSize={'3xl'}>
+                {name}
+              </Text>
+              <Divider />
+              <Text>{description}</Text>
+              <Divider />
+              <HStack>
+                <Text as="b" fontSize={{ base: '5xl', md: '6xl' }}>
+                  ${price}
+                </Text>
+                <Text>/month</Text>
+              </HStack>
+              <form action={path} method="POST">
+                <Button
+                  w={'100%'}
+                  bg={'#40C67F'}
+                  _hover={{ bg: '#FFFAFA', color: '#40C67F' }}
+                  type="submit"
+                  role="link"
+                >
+                  Subscribe
+                </Button>
+              </form>
+              <Text>This includes:</Text>
+              <List>
+                {features.map((feature) => (
+                  <ListItem m={2}>
+                    <ListIcon as={MdCheck} color={'#30A265'} />
+                    {feature}
+                  </ListItem>
+                ))}
+              </List>
+            </VStack>
+          </Box>
+        </Box>
+      )
+    }
+  }
 
-export default Product
+  return (
+    <Box
+      alignSelf={{ base: 'center', lg: 'center' }}
+      _hover={{ bg: '#69D29A' }}
+      bg="#8FdEb4"
+      py={10}
+      h={{ base: '600px', md: '550px' }}
+      shadow="lg"
+      borderRadius={'xl'}
+    >
+      <Box py={4} px={5}>
+        <VStack align={'normal'}>
+          <Text as="b" fontSize={'3xl'}>
+            {name}
+          </Text>
+          <Divider />
+          <Text>{description}</Text>
+          <Divider />
+          <HStack>
+            <Text as="b" fontSize={{ base: '5xl', md: '6xl' }}>
+              ${price}
+            </Text>
+            <Text>/month</Text>
+          </HStack>
+          <form action={path} method="POST">
+            <Button
+              w={'100%'}
+              bg={'#40C67F'}
+              _hover={{ bg: '#FFFAFA', color: '#40C67F' }}
+              type="submit"
+              role="link"
+            >
+              Subscribe
+            </Button>
+          </form>
+          <Text>This includes:</Text>
+          <List>
+            {features.map((feature) => (
+              <ListItem m={2}>
+                <ListIcon as={MdCheck} color={'#30A265'} />
+                {feature}
+              </ListItem>
+            ))}
+          </List>
+        </VStack>
+      </Box>
+    </Box>
+  )
+}

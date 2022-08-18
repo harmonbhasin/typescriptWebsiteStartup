@@ -51,7 +51,7 @@ const Statistics = () => {
     // Declare the async data fetching function
     const fetchData = async () => {
       // Get the data from the api
-      const data = await fetch('/api/create-payment-intent', {
+      const data = await fetch('/api/post/numClients', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: '',
@@ -69,42 +69,42 @@ const Statistics = () => {
 
   return (
     <>
-      <Container py={5} maxW={'container.lg'}>
-        <Grid
-          templateColumns={{
-            base: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(4, 1fr)',
-          }}
-          gap={6}
-        >
-          <GridItem w="100%" colSpan={{ base: 1, sm: 2, md: 2 }}>
-            <Heading as={'h2'}>Our Clients See Progress</Heading>
-          </GridItem>
-          <GridItem w="100%">
-            <Flex flexDirection={'column'}>
-              <Text fontSize={'4xl'} fontWeight={'bold'}>
-                70%
-              </Text>
-              <Box fontSize={'sm'}>
-                of clients broke through plateaus they had for months in only 3
-                weeks.
-              </Box>
-            </Flex>
-          </GridItem>
-          <GridItem w="100%">
-            <Flex flexDirection={'column'}>
-              <Text fontSize={'4xl'} fontWeight={'bold'}>
-                80%
-              </Text>
-              <Box fontSize={'sm'}>
-                of clients reach their targeted weight goals before they
-                expected.
-              </Box>
-            </Flex>
-          </GridItem>
-        </Grid>
-      </Container>
+      <Grid
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          sm: 'repeat(2, 1fr)',
+          md: 'repeat(4, 1fr)',
+        }}
+        gap={6}
+        p={{ base: '50px', md: '100px' }}
+      >
+        <GridItem w="100%" colSpan={{ base: 1, sm: 2, md: 2 }}>
+          <Heading as={'h2'} size={'2xl'}>
+            Our Clients See Progress
+          </Heading>
+        </GridItem>
+        <GridItem w="100%">
+          <Flex flexDirection={'column'}>
+            <Text fontSize={'5xl'} fontWeight={'bold'}>
+              70%
+            </Text>
+            <Box fontSize={'md'}>
+              of clients broke through plateaus they had for months in only 3
+              weeks.
+            </Box>
+          </Flex>
+        </GridItem>
+        <GridItem w="100%">
+          <Flex flexDirection={'column'}>
+            <Text fontSize={'5xl'} fontWeight={'bold'}>
+              80%
+            </Text>
+            <Box fontSize={'md'}>
+              of clients reach their targeted weight goals before they expected.
+            </Box>
+          </Flex>
+        </GridItem>
+      </Grid>
       <Box
         maxW="7xl"
         mx={'auto'}
@@ -114,16 +114,19 @@ const Statistics = () => {
       >
         <chakra.h1
           textAlign={'center'}
-          fontSize={'4xl'}
-          py={10}
+          py={{ base: 5, md: 20 }}
+          fontSize={'5xl'}
           fontWeight={'bold'}
         >
-          Who we coach?
+          Who we work with?
         </chakra.h1>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
-          <StatsCard title={'We serve'} stat={result} />
-          <StatsCard title={'In'} stat={'3 different states'} />
-          <StatsCard title={'From ages'} stat={'18 - 21'} />
+        <SimpleGrid
+          columns={{ base: 1, md: 3 }}
+          spacing={{ base: '75px', lg: 8 }}
+        >
+          <StatsCard title={'We serve'} stat={result + ' clients'} />
+          <StatsCard title={'In'} stat={'4 different states'} />
+          <StatsCard title={'From ages'} stat={'14 - 22'} />
         </SimpleGrid>
       </Box>
     </>

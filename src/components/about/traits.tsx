@@ -30,7 +30,7 @@ const Feature = ({ title, number, text, icon }: FeatureProps) => {
         justify={'center'}
         color={'#CA4862'}
         rounded={'full'}
-        bg={'white'}
+        bg={'#FFFAFA'}
         mb={1}
       >
         {icon}
@@ -39,7 +39,7 @@ const Feature = ({ title, number, text, icon }: FeatureProps) => {
         {title}
       </Text>
       <Divider />
-      <Text color={'white'} fontSize={'xl'}>
+      <Text color={'#FFFAFA'} fontSize={'xl'}>
         {text}
       </Text>
     </Stack>

@@ -78,7 +78,7 @@ const Post: React.FC<PostProps> = (props) => {
         {!props.published && userHasValidSession && postBelongsToUser && (
           <Button
             bg="#14591D"
-            color="white"
+            color="#FFFAFA"
             _hover={{
               bg: '#99AA38',
             }}
@@ -90,7 +90,7 @@ const Post: React.FC<PostProps> = (props) => {
         {userHasValidSession && postBelongsToUser && (
           <Button
             bg="#14591D"
-            color="white"
+            color="#FFFAFA"
             _hover={{
               bg: '#99AA38',
             }}

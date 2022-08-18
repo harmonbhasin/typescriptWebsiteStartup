@@ -82,7 +82,7 @@ const Drafts: React.FC<Props> = (props) => {
           </SimpleGrid>
         </Flex>
       </Grid>
-      <Button bg="#14591D" color="white" onClick={() => Router.push('/blog')}>
+      <Button bg="#14591D" color="#FFFAFA" onClick={() => Router.push('/blog')}>
         Back
       </Button>
       <Box height={'450'} />

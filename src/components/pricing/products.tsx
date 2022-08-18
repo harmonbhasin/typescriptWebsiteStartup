@@ -1,35 +1,29 @@
-import { Box, Grid, GridItem, VStack, Text, SimpleGrid } from '@chakra-ui/react'
-import Product from './product'
+import { SimpleGrid, Text } from '@chakra-ui/react'
+import { Product } from './product'
+import type { ProductProps } from './product'
+import useSwr from 'swr'
 
-const Products = () => (
-  <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
-    <Product
-      name={'Check-In Bot'}
-      description={
-        'Personal bot that helps you stay on program so and increases efficiency'
-      }
-      price={'5'}
-      features={['Daily schedule updates', 'Daily weight check-ins']}
-    />
-    <Product
-      name={'Online Coaching'}
-      description={'Custom online coaching through Harmon and Michael'}
-      price={'10'}
-      features={['24/7 access to us', 'Free program adjustments']}
-    />{' '}
-    <Product
-      name={'Complete Diet Plan'}
-      description={'Comprehensive diet plan, and on demand nutritional advice'}
-      price={'15'}
-      features={['suck', 'it']}
-    />
-    <Product
-      name={'Complete Diet Plan'}
-      description={'Comprehensive diet plan, and on demand nutritional advice'}
-      price={'15'}
-      features={['suck', 'it']}
-    />
-  </SimpleGrid>
-)
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
+
+const Products = () => {
+  const { data, error } = useSwr<ProductProps[]>('/api/prices', fetcher)
+
+  if (error) return <Text>Failed to load prices</Text>
+  if (!data) return <Text>Loading...</Text>
+  return (
+    <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={6}>
+      {data.map((product: ProductProps) => (
+        <Product
+          name={product.name}
+          description={product.description}
+          price={product.price}
+          features={product.features}
+          path={product.path}
+          special={product.special}
+        />
+      ))}
+    </SimpleGrid>
+  )
+}
 
 export default Products

@@ -107,7 +107,7 @@ const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
   }
 
   return (
-    <Box bg={main} color={'white'}>
+    <Box bg={main} color={'#FFFAFA'}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
@@ -172,7 +172,7 @@ const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
                 <Input
                   placeholder={'Your email address'}
                   bg={'blackAlpha.100'}
-                  _placeholder={{ opacity: 1, color: 'white' }}
+                  _placeholder={{ opacity: 1, color: '#FFFAFA' }}
                   border={0}
                   _focus={{
                     bg: 'whiteAlpha.300',
@@ -190,7 +190,7 @@ const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
               <FormControl w={{ base: '100%', md: '40%' }}>
                 <IconButton
                   bg={hoverColor}
-                  color={'white'}
+                  color={'#FFFAFA'}
                   _hover={submitColor}
                   aria-label="Subscribe"
                   isLoading={state === 'submitting'}

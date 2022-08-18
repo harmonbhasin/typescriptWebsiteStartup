@@ -43,7 +43,7 @@ export default function SplitWithImage() {
         <Stack spacing={4}>
           <Text
             textTransform={'uppercase'}
-            color={'white'}
+            color={'#FFFAFA'}
             fontWeight={600}
             fontSize={'sm'}
             bg={'#8fdeb4'}
@@ -54,19 +54,19 @@ export default function SplitWithImage() {
             Our Story
           </Text>
           <Heading>A Flexible Coaching Service</Heading>
-          <Text color={'white'} fontSize={'lg'}>
+          <Text color={'#FFFAFA'} fontSize={'lg'}>
             Everyone has busy schedules, we're here to enrich your life by
             providing you with the tools you need to take control of your
             health.
           </Text>
-          <Stack spacing={4} divider={<StackDivider borderColor={'white'} />}>
+          <Stack spacing={4} divider={<StackDivider borderColor={'#FFFAFA'} />}>
             <Feature
-              icon={<Icon as={IoBarbell} color={'white'} w={5} h={5} />}
+              icon={<Icon as={IoBarbell} color={'#FFFAFA'} w={5} h={5} />}
               iconBg={'#f16764'}
               text={'Workout Plans'}
             />
             <Feature
-              icon={<Icon as={IoFitnessSharp} color={'white'} w={5} h={5} />}
+              icon={<Icon as={IoFitnessSharp} color={'#FFFAFA'} w={5} h={5} />}
               iconBg={'#8fdeb4'}
               text={'Nutritional Recommendations'}
             />

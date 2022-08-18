@@ -45,14 +45,14 @@ export default function CallToActionWithAnnotation() {
               fontWeight={600}
               fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
               lineHeight={'110%'}
-              color="white"
+              color="#FFFAFA"
             >
               Get the body <br />
               <Text as={'span'} color={'#52bbb7'}>
                 of your dreams
               </Text>
             </Heading>
-            <Text color={'white'}>
+            <Text color={'#FFFAFA'}>
               As college students who are very involved on campus and don't want
               to give up our social lives, we understand that it can be
               difficult to stay healthy while still achieving all of your other
@@ -83,7 +83,7 @@ export default function CallToActionWithAnnotation() {
               <Button
                 onClick={() => router.push('/services')}
                 variant={'link'}
-                color={'white'}
+                color={'#FFFAFA'}
                 size={'sm'}
               >
                 Learn more
@@ -91,7 +91,7 @@ export default function CallToActionWithAnnotation() {
               <Box>
                 <Icon
                   as={Arrow}
-                  color={'white'}
+                  color={'#FFFAFA'}
                   w={71}
                   position={'absolute'}
                   right={-71}
@@ -106,7 +106,7 @@ export default function CallToActionWithAnnotation() {
                   transform={'rotate(10deg)'}
                   color={'white'}
                 >
-                  Only $14.99 for a program
+                  Plans that adjust to your needs!
                 </Text>
               </Box>
             </Stack>

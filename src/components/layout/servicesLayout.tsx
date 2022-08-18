@@ -8,7 +8,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Navbar main={'#CA4862'} textColor={'white'} hoverColor={'#F16764'} />
+      <Navbar main={'#CA4862'} textColor={'#FFFAFA'} hoverColor={'#F16764'} />
       <main>{children}</main>
       <Footer
         main={'#CA4862'}

@@ -2,9 +2,9 @@ import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
+import { SessionProvider } from 'next-auth/react'
 import Head from 'next/head'
 import Theme from '../src/theme/index'
-import { SessionProvider } from 'next-auth/react'
 
 // https://nikolovlazar.com/blog/custom-layouts-in-nextjs
 // Custom layouts are not considered as pages, so the only way to fetch data is on the client side

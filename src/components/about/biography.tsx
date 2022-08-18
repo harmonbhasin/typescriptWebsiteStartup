@@ -8,7 +8,6 @@ import {
   IconButton,
 } from '@chakra-ui/react'
 import { BsLinkedin } from 'react-icons/bs'
-import Gallery from './carousel'
 
 interface IndividualProps {
   name: string

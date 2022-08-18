@@ -86,7 +86,7 @@ const Draft: React.FC = () => {
         <HStack spacing="20">
           <Button
             bg="#14591D"
-            color="white"
+            color="#FFFAFA"
             _hover={{
               bg: '#99AA38',
             }}
@@ -97,7 +97,7 @@ const Draft: React.FC = () => {
           </Button>
           <Button
             bg="#14591D"
-            color="white"
+            color="#FFFAFA"
             _hover={{
               bg: '#99AA38',
             }}

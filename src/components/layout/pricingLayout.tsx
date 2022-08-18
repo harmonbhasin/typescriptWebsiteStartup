@@ -8,14 +8,14 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Navbar main={'#8FdEb4'} textColor={'white'} hoverColor={'#52bbb7'} />
+      <Navbar main={'#8FdEb4'} textColor={'#FFFAFA'} hoverColor={'#40C67F'} />
       <main>{children}</main>
       <Footer
         main={'#8FdEb4'}
         hoverColor={'#69D29A'}
         submitColor={{
-          bg: 'white',
-          color: '#69D29A',
+          bg: '#FFFAFA',
+          color: '#40C67F',
         }}
       />
     </>
