@@ -29,6 +29,7 @@ const mainLinks = [
   { title: 'Blog', loc: '/blog' },
   { title: 'Contact', loc: '/contact' },
   { title: 'Pricing', loc: '/pricing' },
+  { title: 'Merch', loc: '/merch' },
 ]
 
 const NavLink = ({ title, loc, hoverSettings }: NavLinkProps) => (
