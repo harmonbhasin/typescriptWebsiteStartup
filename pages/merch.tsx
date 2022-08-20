@@ -1,12 +1,9 @@
 import { Box, Text, VStack } from '@chakra-ui/react'
-import Stats from '../src/components/home/stats'
-import OurStory from '../src/components/home/ourStory'
-import CallToActionWithAnnotation from '../src/components/home/callToAction'
-import Testimonial from '../src/components/home/testimonials'
 import Layout from '../src/components/layout/mainLayout'
 
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
+import SimpleProduct from '../src/components/merch/simpleProduct'
 
 const confetti = {
   light: {
@@ -32,20 +29,9 @@ const Merch: NextPageWithLayout = () => (
     }}
   >
     <Box p={10} bg={'#CA4862'} color={'#FFFAFA'}>
-      <VStack>
-        <Text as="b" py={5} fontSize={{ base: '4xl', md: '6xl' }}>
-          Modern Fitness Coaching
-        </Text>
-        <OurStory />
-      </VStack>
+      <SimpleProduct />
     </Box>
-    <Box p={10}>
-      <Stats />
-    </Box>
-    <Box bg={'#8FdEb4'} p={10}>
-      <CallToActionWithAnnotation />
-    </Box>
-    <Testimonial />
+    <Box p={10} height={{ md: '200px' }} bg={'#CA4862'} color={'#FFFAFA'} />
   </Box>
 )
 
