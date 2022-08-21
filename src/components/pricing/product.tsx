@@ -9,15 +9,17 @@ import {
   ListIcon,
   Divider,
   Center,
+  Link,
 } from '@chakra-ui/react'
 import { MdCheck } from 'react-icons/md'
+import { useEffect, useState } from 'react'
 
 export type ProductProps = {
   name: string
   description: string
   price: string
   features: string[]
-  path: string
+  priceId: string
   special: boolean
 }
 
@@ -26,9 +28,31 @@ export const Product = ({
   description,
   price,
   features,
-  path,
+  priceId,
   special,
 }: ProductProps) => {
+  const [result, useResult] = useState('')
+
+  useEffect(() => {
+    // Declare the async data fetching function
+    const fetchData = async () => {
+      // Get the data from the api
+      const body = { priceId }
+      const data = await fetch('/api/post/subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      })
+      // Convert the data to json
+      const json = await data.json()
+
+      // Set the state with the result
+      useResult(json)
+    }
+
+    // Call the function and catch any error
+    fetchData().catch(console.error)
+  }, [])
   {
     if (special) {
       return (
@@ -66,17 +90,16 @@ export const Product = ({
                 </Text>
                 <Text>/month</Text>
               </HStack>
-              <form action={path} method="POST">
+              <Link href={result} _hover={{}}>
                 <Button
                   w={'100%'}
                   bg={'#40C67F'}
                   _hover={{ bg: '#FFFAFA', color: '#40C67F' }}
                   type="submit"
-                  role="link"
                 >
                   Subscribe
                 </Button>
-              </form>
+              </Link>
               <Text>This includes:</Text>
               <List>
                 {features.map((feature) => (
@@ -117,17 +140,15 @@ export const Product = ({
             </Text>
             <Text>/month</Text>
           </HStack>
-          <form action={path} method="POST">
+          <Link href={result} _hover={{}}>
             <Button
               w={'100%'}
               bg={'#40C67F'}
               _hover={{ bg: '#FFFAFA', color: '#40C67F' }}
-              type="submit"
-              role="link"
             >
               Subscribe
             </Button>
-          </form>
+          </Link>
           <Text>This includes:</Text>
           <List>
             {features.map((feature) => (

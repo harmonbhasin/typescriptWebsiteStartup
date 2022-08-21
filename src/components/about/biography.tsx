@@ -44,6 +44,7 @@ const Individual = ({
           variant="ghost"
           size="lg"
           icon={<BsLinkedin size="28px" />}
+          _hover={{ color: '#F16764', bg: '#FFFAFA' }}
         />
       </Link>
     </HStack>

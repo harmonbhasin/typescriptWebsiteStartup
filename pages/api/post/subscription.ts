@@ -6,27 +6,26 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 // use-shopping-cart
 // Used this to implement shopping cart
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+    const { priceId } = req.body
+
     if (req.method === 'POST') {
-        try {
         // Create Checkout Sessions from body params.
         const session = await stripe.checkout.sessions.create({
         line_items: [
             {
-            price: 'price_1LY3b5HDxcuP4tEimk7npDqA',
+            price: priceId,
             quantity: 1,
             },
         ],
-        mode: 'subscription',
         phone_number_collection: {
             enabled: true,
           },
-        success_url: `${req.headers.origin}/success`,
-        cancel_url: `${req.headers.origin}/pricing`,
+        mode: 'subscription',
+        success_url: `https://www.saltubolic.com/success`,
+        cancel_url: `https://www.saltubolic.com/pricing`,
         });
-        res.redirect(303, session.url);
-        } catch (err: any) {
-        res.status(err.statusCode || 500).json(err.message);
-        }
+        res.json(session.url)
+
     } else {
         res.setHeader('Allow', 'POST');
         res.status(405).end('Method Not Allowed');

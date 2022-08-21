@@ -5,8 +5,11 @@ import useSwr from 'swr'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-const Products = () => {
-  const { data, error } = useSwr<ProductProps[]>('/api/prices', fetcher)
+const ListProducts = () => {
+  const { data, error } = useSwr<ProductProps[]>(
+    '/api/subscriptionPrices',
+    fetcher
+  )
 
   if (error) return <Text>Failed to load prices</Text>
   if (!data) return <Text>Loading...</Text>
@@ -18,7 +21,7 @@ const Products = () => {
           description={product.description}
           price={product.price}
           features={product.features}
-          path={product.path}
+          priceId={product.priceId}
           special={product.special}
         />
       ))}
@@ -26,4 +29,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default ListProducts

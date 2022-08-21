@@ -11,7 +11,7 @@ import {
 
 const SimpleProduct = () => {
   return (
-    <form action={'/api/checkoutSessions/tankTop'} method="POST">
+    <form action={'/api/post/tankTop'} method="POST">
       <Center py={12}>
         <Box
           role={'group'}
