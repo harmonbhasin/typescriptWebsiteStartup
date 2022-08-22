@@ -13,12 +13,21 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         line_items: [
             {
             price: 'price_1LYhsoHDxcuP4tEiQ7iTllJh',
-            quantity: 1,
+            adjustable_quantity: {
+                enabled: true,
+                minimum: 1,
+                maximum: 5
+            },
+            quantity:1
             },
         ],
+        shipping_address_collection: {
+            allowed_countries: ['US']
+          },
         mode: 'payment',
         success_url: `${req.headers.origin}/success`,
         cancel_url: `${req.headers.origin}/pricing`,
+        automatic_tax: {enabled: true},
         });
         res.redirect(303, session.url);
         } catch (err: any) {

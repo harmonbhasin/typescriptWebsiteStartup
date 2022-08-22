@@ -23,6 +23,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         mode: 'subscription',
         success_url: `https://www.saltubolic.com/success`,
         cancel_url: `https://www.saltubolic.com/pricing`,
+        automatic_tax: {enabled: true},
         });
         res.json(session.url)
 
