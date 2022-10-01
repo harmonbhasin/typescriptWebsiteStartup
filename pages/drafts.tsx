@@ -1,7 +1,7 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
 import { useSession, getSession } from 'next-auth/react'
-import Post, { PostProps } from '../src/components/post'
+import Post, { PostProps } from '../components/post'
 import { prisma } from '../lib/prisma'
 import {
   Box,

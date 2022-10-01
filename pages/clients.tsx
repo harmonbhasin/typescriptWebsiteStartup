@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { Box } from '@chakra-ui/react'
 import SubmitInfo from '../components/contactForm'
-import ContactLayout from '../components/layout/contactLayout'
+import CoachesLayout from '../components/layout/contactLayout'
 
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
@@ -9,15 +9,15 @@ import type { NextPageWithLayout } from './_app'
 /**
  * This page is used to submit contact information and buy a program.
  */
-const Contact: NextPageWithLayout = () => (
+const Coaches: NextPageWithLayout = () => (
   <Box color={'black'}>
     <SubmitInfo />
     <Box h={100}></Box>
   </Box>
 )
 
-Contact.getLayout = (page: ReactElement) => {
-  return <ContactLayout>{page}</ContactLayout>
+Coaches.getLayout = (page: ReactElement) => {
+  return <CoachesLayout>{page}</CoachesLayout>
 }
 
-export default Contact
+export default Coaches

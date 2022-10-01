@@ -1,14 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import type { ProductProps } from '../../src/components/pricing/product'
+import type { ProductProps } from '../../components/pricing/product'
 
 // Fake users data
 const productList: ProductProps[] = [
   {
     name: 'Premium',
     description: 'Get in-person training once a week for up to 90 minutes.',
-    price: '120',
+    price: '200',
     features: ['Get exercises that fit the physiology of your body', 'Early access to new features','Access to all Premium features'],
-    priceId: 'price_1LY3bgHDxcuP4tEiDm6qb6G4',
+    priceId: 'price_1LmLeNHDxcuP4tEiL3HGne47',
     special: false
   },
     {

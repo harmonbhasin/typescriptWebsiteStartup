@@ -7,9 +7,9 @@ import {
   Container,
   Divider,
 } from '@chakra-ui/react'
-import Individual from '../src/components/about/biography'
-import Traits from '../src/components/about/traits'
-import AboutLayout from '../src/components/layout/aboutLayout'
+import Individual from '../components/about/biography'
+import Traits from '../components/about/traits'
+import AboutLayout from '../components/layout/aboutLayout'
 
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'

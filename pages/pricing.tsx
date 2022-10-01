@@ -10,8 +10,8 @@ import {
   AccordionIcon,
   Divider,
 } from '@chakra-ui/react'
-import Products from '../src/components/pricing/listProducts'
-import PricingLayout from '../src/components/layout/pricingLayout'
+import Products from '../components/pricing/listProducts'
+import PricingLayout from '../components/layout/pricingLayout'
 
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'

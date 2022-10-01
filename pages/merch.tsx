@@ -1,9 +1,9 @@
 import { Box, Text, VStack } from '@chakra-ui/react'
-import Layout from '../src/components/layout/mainLayout'
+import Layout from '../components/layout/mainLayout'
 
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
-import SimpleProduct from '../src/components/merch/simpleProduct'
+import SimpleProduct from '../components/merch/simpleProduct'
 
 const confetti = {
   light: {

@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import { Flex } from '@chakra-ui/react'
-import ServicesLayout from '../src/components/layout/servicesLayout'
-import Feature from '../src/components/service/feature'
-import type { FeatureProps } from '../src/components/service/feature'
+import ServicesLayout from '../components/layout/servicesLayout'
+import Feature from '../components/service/feature'
+import type { FeatureProps } from '../components/service/feature'
 
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'

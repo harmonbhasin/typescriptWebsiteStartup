@@ -4,12 +4,12 @@ import Layout from '../components/layout/mainLayout'
 import { NextPageWithLayout } from './_app'
 import type { ReactElement } from 'react'
 
-const privacyPolicy: NextPageWithLayout = () => {
-  return <Template dataId={'ef40b639-eb84-4a52-9ff1-737715d0e14b'} />
+const Cookies: NextPageWithLayout = () => {
+  return <Template dataId={'1787c26f-151f-4961-8c7c-d98a7d0cf53c'} />
 }
 
-privacyPolicy.getLayout = (page: ReactElement) => {
+Cookies.getLayout = (page: ReactElement) => {
   return <Layout>{page}</Layout>
 }
 
-export default privacyPolicy
+export default Cookies

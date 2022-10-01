@@ -1,11 +1,11 @@
 import React, { ReactNode } from 'react'
 import { GetServerSideProps, NextPage } from 'next'
-import Post, { PostProps } from '../src/components/post'
+import Post, { PostProps } from '../components/post'
 import { prisma } from '../lib/prisma'
 import { Center, Flex, Heading, SimpleGrid, Box } from '@chakra-ui/react'
 import { useSession } from 'next-auth/react'
 import Header from '../pages/header'
-import BlogLayout from '../src/components/layout/blogLayout'
+import BlogLayout from '../components/layout/blogLayout'
 
 import type { ReactElement } from 'react'
 

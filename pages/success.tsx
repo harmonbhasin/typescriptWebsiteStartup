@@ -1,5 +1,5 @@
 import { Box, Text, VStack, Heading } from '@chakra-ui/react'
-import Layout from '../src/components/layout/mainLayout'
+import Layout from '../components/layout/mainLayout'
 
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
