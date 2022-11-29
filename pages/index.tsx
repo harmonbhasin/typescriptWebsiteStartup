@@ -31,7 +31,7 @@ const Home: NextPageWithLayout = () => (
       backgroundAttachment: 'fixed',
     }}
   >
-    <Box p={10} bg={'#CA4862'} color={'#FFFAFA'}>
+    <Box p={10} bg={'#0E1B11'} color={'#FFFAFA'}>
       <VStack>
         <Text as="b" py={5} fontSize={{ base: '4xl', md: '6xl' }}>
           Modern Fitness Coaching
@@ -42,7 +42,7 @@ const Home: NextPageWithLayout = () => (
     <Box p={10}>
       <Stats />
     </Box>
-    <Box bg={'#8FdEb4'} p={10}>
+    <Box bg={'#0E1B11'} p={10}>
       <CallToActionWithAnnotation />
     </Box>
     <Box py={'100px'}>

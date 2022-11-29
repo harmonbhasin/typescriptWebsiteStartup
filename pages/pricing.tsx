@@ -100,7 +100,11 @@ const Pricing: NextPageWithLayout = () => {
           <Text as="b" fontSize={{ base: '4xl', md: '5xl' }} m={10}>
             Common Questions
           </Text>
-          <Accordion mb={'50px'} allowToggle>
+          <Accordion
+            mb={'50px'}
+            w={{ base: '250px', md: '600px', lg: '900px' }}
+            allowToggle
+          >
             {questions.map((question: questionProps) => (
               <AccordionItem>
                 <AccordionButton>

@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+/*
 import { GetServerSideProps, NextPage } from 'next'
 import Post, { PostProps } from '../components/post'
 import { prisma } from '../lib/prisma'
@@ -102,6 +103,12 @@ const Blog = (props: NextPageWithLayout) => {
 
 Blog.getLayout = (page: ReactElement) => {
   return <BlogLayout>{page}</BlogLayout>
+}
+
+export default Blog
+*/
+const Blog = () => {
+  return <p>Hi</p>
 }
 
 export default Blog
