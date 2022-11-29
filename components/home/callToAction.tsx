@@ -48,7 +48,7 @@ export default function CallToActionWithAnnotation() {
               color="#FFFAFA"
             >
               Get the body <br />
-              <Text as={'span'} color={'#52bbb7'}>
+              <Text as={'span'} color={'#4B9325'}>
                 of your dreams
               </Text>
             </Heading>
@@ -70,7 +70,7 @@ export default function CallToActionWithAnnotation() {
             >
               <Button
                 colorScheme={'green'}
-                bg={'#52bbb7'}
+                bg={'#5D8731'}
                 rounded={'full'}
                 px={6}
                 _hover={{
