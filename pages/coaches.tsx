@@ -38,53 +38,57 @@ const coachInfo = [
 /**
  * This page is used to submit contact information and buy a program.
  */
-const Coaches: NextPageWithLayout = () => (
-  <Box color={'black'}>
-    <Center flexDirection={'column'}>
-      <Heading>Our coaches</Heading>
-      <Text>
-        We may be small, but we pack a punch and have a good time while doing
-        it.
-      </Text>
-      <Divider width={'200px'} borderWidth={'2px'} borderColor={'black'} />
-    </Center>
-    <Flex flexDir={'row'} justifyContent={'center'} gap={10}>
-      {coachInfo.map(
-        ({ formalPicture, informalPicture, name, title, bio, linkedin }) => (
-          <Coach
-            formalPicture={formalPicture}
-            informalPicture={informalPicture}
-            name={name}
-            title={title}
-            bio={bio}
-            linkedin={linkedin}
-          />
-        )
-      )}
-    </Flex>
-    <Divider />
-    <Center flexDirection={'column'}>
-      <Heading>Our Clients</Heading>
-      <Text>
-        We help people who already have busy lives, live better lives.
-      </Text>
-    </Center>
-    <Flex flexDir={'row'} justifyContent={'center'} gap={10}>
-      {coachInfo.map(({ picture, name, title, bio, linkedin }) => (
-        <Coach
-          picture={picture}
-          name={name}
-          title={title}
-          bio={bio}
-          linkedin={linkedin}
-        />
-      ))}
-    </Flex>
-  </Box>
-)
+//const Coaches: NextPageWithLayout = () => (
+//   <Box color={'black'}>
+//     <Center flexDirection={'column'}>
+//       <Heading>Our coaches</Heading>
+//       <Text>
+//         We may be small, but we pack a punch and have a good time while doing
+//         it.
+//       </Text>
+//       <Divider width={'200px'} borderWidth={'2px'} borderColor={'black'} />
+//     </Center>
+//     <Flex flexDir={'row'} justifyContent={'center'} gap={10}>
+//       {coachInfo.map(
+//         ({ formalPicture, informalPicture, name, title, bio, linkedin }) => (
+//           <Coach
+//             formalPicture={formalPicture}
+//             informalPicture={informalPicture}
+//             name={name}
+//             title={title}
+//             bio={bio}
+//             linkedin={linkedin}
+//           />
+//         )
+//       )}
+//     </Flex>
+//     <Divider />
+//     <Center flexDirection={'column'}>
+//       <Heading>Our Clients</Heading>
+//       <Text>
+//         We help people who already have busy lives, live better lives.
+//       </Text>
+//     </Center>
+//     <Flex flexDir={'row'} justifyContent={'center'} gap={10}>
+//       {coachInfo.map(({ picture, name, title, bio, linkedin }) => (
+//         <Coach
+//           picture={picture}
+//           name={name}
+//           title={title}
+//           bio={bio}
+//           linkedin={linkedin}
+//         />
+//       ))}
+//     </Flex>
+//   </Box>
+// )
 
-Coaches.getLayout = (page: ReactElement) => {
-  return <CoachesLayout>{page}</CoachesLayout>
+// Coaches.getLayout = (page: ReactElement) => {
+//   return <CoachesLayout>{page}</CoachesLayout>
+// }
+
+const Coaches: NextPageWithLayout = () => {
+  return <p>hi</p>
 }
 
 export default Coaches

@@ -31,11 +31,6 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# irrelevant files
-/components/layout/blogLayout.tsx
-/components/layout/coachesLayout.tsx
-/components/layout/postLayout.tsx
-
 # vercel
 .vercel
 
