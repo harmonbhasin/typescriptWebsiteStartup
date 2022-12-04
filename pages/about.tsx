@@ -46,7 +46,7 @@ const IndivialList: Array<IndividualProps> = [
 ]
 
 /**
- * This page tells the users about both the coaches, Harmon and Michael.
+ * This page tells the users about both the coaches, Harmon and Michael. Sick
  */
 const About: NextPageWithLayout = () => (
   <Box color={Handsome.darkShade} bg={Handsome.lightShade}>
