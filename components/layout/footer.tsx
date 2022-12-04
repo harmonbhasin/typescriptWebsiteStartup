@@ -11,18 +11,20 @@ import {
   FormControl,
   IconButton,
   useColorModeValue,
-  Button,
   Image,
 } from '@chakra-ui/react'
-import React, { ReactNode, useState, ChangeEvent } from 'react'
+import React, { ReactNode, useState, ChangeEvent, ReactElement } from 'react'
 import { FaInstagram, FaTwitter, FaYoutube, FaTiktok } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 import Script from 'next/script'
+import { Handsome } from '../../style/colors'
+import { IconType } from 'react-icons'
 
-interface FooterColorProps {
-  main: string
-  hoverColor: string
-  submitColor: any
+interface FooterProps {
+  mainColor: string
+  mainColorContrast: string
+  textColor: string
+  isWhite: boolean
 }
 
 interface SocialButtonProps {
@@ -31,6 +33,67 @@ interface SocialButtonProps {
   href: string
   hoverSettings: any
 }
+
+interface Social {
+  label: string
+  href: string
+  icon: ReactElement<IconType>
+}
+interface Link {
+  title: string
+  loc: string
+}
+
+const companyLinks: Array<Link> = [
+  { title: 'About', loc: '/about' },
+  /*{ title: 'Blog', loc: '/blog' },*/
+  { title: 'Services', loc: '/services' },
+  { title: 'Pricing', loc: '/pricing' },
+  { title: 'Merch', loc: '/merch' },
+  { title: 'Contact', loc: '/contact' },
+]
+
+const supportLinks: Array<Link> = [
+  {
+    title: 'Terms and Conditions',
+    loc: '/terms-and-conditions',
+  },
+  {
+    title: 'Disclaimer',
+    loc: '/disclaimer',
+  },
+  {
+    title: 'Privacy Policy',
+    loc: '/privacy-policy',
+  },
+  {
+    title: 'Cookie Policy',
+    loc: '/cookies',
+  },
+]
+
+const socialMedia: Array<Social> = [
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/saltubolic/',
+    icon: <FaInstagram />,
+  },
+  {
+    label: 'Twitter',
+    href: 'https://twitter.com/saltubolic',
+    icon: <FaTwitter />,
+  },
+  {
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@saltu_bolic',
+    icon: <FaTiktok />,
+  },
+  {
+    label: 'Youtube',
+    href: 'https://www.youtube.com/channel/UC3Ihkq4KsC3wFzQtZ_dze3g',
+    icon: <FaYoutube />,
+  },
+]
 
 const SocialButton = ({
   children,
@@ -67,35 +130,12 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
   )
 }
 
-const companyLinks = [
-  { title: 'About', loc: '/about' },
-  /*{ title: 'Blog', loc: '/blog' },*/
-  { title: 'Services', loc: '/services' },
-  { title: 'Pricing', loc: '/pricing' },
-  { title: 'Merch', loc: '/merch' },
-  { title: 'Contact', loc: '/contact' },
-]
-
-const supportLinks = [
-  {
-    title: 'Terms and Conditions',
-    loc: '/terms-and-conditions',
-  },
-  {
-    title: 'Disclaimer',
-    loc: '/disclaimer',
-  },
-  {
-    title: 'Privacy Policy',
-    loc: '/privacy-policy',
-  },
-  {
-    title: 'Cookie Policy',
-    loc: '/cookies',
-  },
-]
-
-const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
+const Footer = ({
+  mainColor,
+  mainColorContrast,
+  textColor,
+  isWhite,
+}: FooterProps) => {
   const [email, setEmail] = useState('')
   const [error, setError] = useState(false)
   const [state, setState] = useState<'initial' | 'submitting' | 'success'>(
@@ -123,7 +163,7 @@ const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
   }
 
   return (
-    <Box bg={main} color={'#FFFAFA'}>
+    <Box bg={mainColor} color={textColor}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
@@ -131,44 +171,24 @@ const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
         >
           <Stack spacing={6}>
             <Box>
-              <Image src="/whiteLogo.png" w="250px" />
+              <Image src={isWhite ? '/Logo.png' : '/whiteLogo.png'} w="250px" />
             </Box>
             <Text fontSize={'sm'}>
               © 2022 Saltubolic LLC. All rights reserved
             </Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton
-                label={'Instagram'}
-                href={'https://www.instagram.com/saltubolic/'}
-                hoverSettings={{ bg: hoverColor }}
-              >
-                <FaInstagram />
-              </SocialButton>
-              <SocialButton
-                label={'Twitter'}
-                href={'https://twitter.com/saltubolic'}
-                hoverSettings={{ bg: hoverColor }}
-              >
-                <FaTwitter />
-              </SocialButton>
-              <SocialButton
-                label={'Tik Tok'}
-                href={'https://www.tiktok.com/@saltu_bolic'}
-                hoverSettings={{ bg: hoverColor }}
-              >
-                <FaTiktok />
-              </SocialButton>
-              <SocialButton
-                label={'Youtube'}
-                href={
-                  'https://www.youtube.com/channel/UC3Ihkq4KsC3wFzQtZ_dze3g'
-                }
-                hoverSettings={{ bg: hoverColor }}
-              >
-                <FaYoutube />
-              </SocialButton>
+              {socialMedia.map(({ label, href, icon }: Social) => (
+                <SocialButton
+                  label={label}
+                  href={href}
+                  hoverSettings={{ bg: mainColorContrast }}
+                >
+                  {icon}
+                </SocialButton>
+              ))}
             </Stack>
           </Stack>
+
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
             {companyLinks.map((link) => (
@@ -188,7 +208,7 @@ const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
                 <Input
                   placeholder={'Your email address'}
                   bg={'blackAlpha.100'}
-                  _placeholder={{ opacity: 1, color: '#FFFAFA' }}
+                  _placeholder={{ opacity: 1, color: 'textColor' }}
                   border={0}
                   _focus={{
                     bg: 'whiteAlpha.300',
@@ -205,9 +225,12 @@ const Footer = ({ main, hoverColor, submitColor }: FooterColorProps) => {
               </FormControl>
               <FormControl w={{ base: '100%', md: '40%' }}>
                 <IconButton
-                  bg={hoverColor}
-                  color={'#FFFAFA'}
-                  _hover={submitColor}
+                  bg={textColor}
+                  color={mainColor}
+                  _hover={{
+                    bg: mainColorContrast,
+                    color: textColor,
+                  }}
                   aria-label="Subscribe"
                   isLoading={state === 'submitting'}
                   type={state === 'success' ? 'button' : 'submit'}

@@ -22,16 +22,10 @@ import {
   ListItem,
 } from '@chakra-ui/react'
 import React, { ChangeEvent, useState } from 'react'
-import {
-  BsFillCalendarCheckFill,
-  BsInstagram,
-  BsPerson,
-  BsTwitter,
-} from 'react-icons/bs'
+import { BsInstagram, BsPerson, BsTwitter } from 'react-icons/bs'
 import { FaTiktok } from 'react-icons/fa'
 import { MdEmail, MdOutlineEmail } from 'react-icons/md'
-
-const color = '#CA4862'
+import { Handsome } from '../../style/colors'
 
 const ContactFormWithSocialButtons = () => {
   const { hasCopied, onCopy } = useClipboard('saltubolic@protonmail.com')
@@ -96,8 +90,8 @@ const ContactFormWithSocialButtons = () => {
                     fontSize="3xl"
                     icon={<MdEmail />}
                     _hover={{
-                      bg: '#CA4862',
-                      color: useColorModeValue('#FFFAFA', 'gray.700'),
+                      bg: Handsome.lightShade,
+                      color: Handsome.mainColorContrast,
                     }}
                     onClick={onCopy}
                     isRound
@@ -111,8 +105,8 @@ const ContactFormWithSocialButtons = () => {
                     size="lg"
                     icon={<BsTwitter size="28px" />}
                     _hover={{
-                      bg: '#CA4862',
-                      color: useColorModeValue('#FFFAFA', 'gray.700'),
+                      bg: Handsome.lightShade,
+                      color: Handsome.mainColorContrast,
                     }}
                     isRound
                   />
@@ -125,8 +119,8 @@ const ContactFormWithSocialButtons = () => {
                     size="lg"
                     icon={<BsInstagram size="28px" />}
                     _hover={{
-                      bg: '#CA4862',
-                      color: useColorModeValue('#FFFAFA', 'gray.700'),
+                      bg: Handsome.lightShade,
+                      color: Handsome.mainColorContrast,
                     }}
                     isRound
                   />
@@ -139,8 +133,8 @@ const ContactFormWithSocialButtons = () => {
                     size="lg"
                     icon={<FaTiktok size="28px" />}
                     _hover={{
-                      bg: '#CA4862',
-                      color: useColorModeValue('#FFFAFA', 'gray.700'),
+                      bg: Handsome.lightShade,
+                      color: Handsome.mainColorContrast,
                     }}
                     isRound
                   />
@@ -148,11 +142,12 @@ const ContactFormWithSocialButtons = () => {
               </Stack>
 
               <Box
-                bg={useColorModeValue('#FFFAFA', 'gray.700')}
+                bg={Handsome.lightShade}
                 borderRadius="lg"
                 p={8}
-                color={useColorModeValue('gray.700', 'whiteAlpha.900')}
+                color={Handsome.darkShade}
                 shadow="base"
+                minW={{ md: '750px' }}
               >
                 <VStack spacing={5} as={'form'} onSubmit={submitData}>
                   <FormControl isRequired>
@@ -169,6 +164,7 @@ const ContactFormWithSocialButtons = () => {
                         onChange={(e: ChangeEvent<HTMLInputElement>) =>
                           setName(e.target.value)
                         }
+                        borderColor={Handsome.darkShade}
                       />
                     </InputGroup>
                   </FormControl>
@@ -187,6 +183,7 @@ const ContactFormWithSocialButtons = () => {
                         onChange={(e: ChangeEvent<HTMLInputElement>) =>
                           setEmail(e.target.value)
                         }
+                        borderColor={Handsome.darkShade}
                       />
                     </InputGroup>
                   </FormControl>
@@ -204,14 +201,18 @@ const ContactFormWithSocialButtons = () => {
                       onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                         setContent(e.target.value)
                       }
+                      borderColor={Handsome.darkShade}
                     />
                   </FormControl>
 
                   <Button
-                    bg="#CA4862"
-                    color="#FFFAFA"
+                    bg={Handsome.lightShade}
+                    color={Handsome.mainColorContrast}
+                    border="2px"
+                    borderColor={Handsome.mainColorContrast}
                     _hover={{
-                      bg: '#f16764',
+                      bg: Handsome.mainColorContrast,
+                      color: Handsome.lightShade,
                     }}
                     isFullWidth
                     isLoading={state === 'submitting'}

@@ -2,6 +2,7 @@ import React from 'react'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
 import { Avatar, chakra, Flex, useColorModeValue } from '@chakra-ui/react'
+import { Handsome } from '../../style/colors'
 
 interface TestimonialCardProps {
   name: string
@@ -13,31 +14,31 @@ interface TestimonialCardProps {
 const testimonials = [
   {
     name: 'Sophie L.',
-    role: 'Student (UW-Madison)',
+    role: 'Student (University of Wisconsin-Madison)',
     content:
       "I started using the Saltubolic coaching program a few months ago and it has completely changed my fitness journey. Harmon and Michael worked with me to make a customized program that aligns with my physique goals and fits within my busy schedule as a student. Not only have they created the perfect plan for me inside the gym, but they have given me the tools to make conscious decisions about my diet so that what I'm eating reflects my goals. I would highly recommend Saltubolic, and the results speak for themselves. ",
-    avatar: '/clients/Sophie.jpg',
+    avatar: '/clients/sophie.jpeg',
   },
   {
-    name: 'Carlene N.',
-    role: 'Student (UW-Madison)',
-    content:
-      "I was honestly impressed with how much Harmon and Michael knew. I tried my universities local personal trainers, but it seems they didn't really know what they were doing. What's really helpful is that Harmon and Michael are also students so they understand the struggles that come with establishing a routine while balancing classes. They really flexible with how they program and will help you make the most of your time at the gym. They believe less is more, and I love how this is able to integrate into my schedule.",
-    avatar: '/clients/Carlene.jpg',
-  },
-  {
-    name: 'Arthur S.',
-    role: 'Student (Harper College)',
+    name: 'Pranay P.',
+    role: 'Student (Union College)',
     content:
       "Even though I'm not living in the same area as Harmon or Michael, it still feels like they're here with me. Whenever I send them a text I get a response within a timely fashion. It's amazing how much I was able to do given that this is online coaching. Don't understimate what you can do when you have a goal and some guidance. Harmon and Michael provide that guidance and help you learn throughout the process so that you're not just blindly following advice. I wish I had started working with them sooner!",
-    avatar: '/clients/Attie.jpg',
+    avatar: '/clients/pranay.jpeg',
   },
   {
-    name: 'Ethan Y.',
-    role: 'Student (UW-Madison)',
+    name: 'Adison K.',
+    role: 'Student (University of Wisconsin-Madison)',
+    content:
+      "I was honestly impressed with how much Harmon and Michael knew. I tried my universities local personal trainers, but it seems they didn't really know what they were doing. What's really helpful is that Harmon and Michael are also students so they understand the struggles that come with establishing a routine while balancing classes. They really flexible with how they program and will help you make the most of your time at the gym. They believe less is more, and I love how this is able to integrate into my schedule.",
+    avatar: '/clients/adison.jpg',
+  },
+  {
+    name: 'Jack D.',
+    role: 'Student (Iowa State University)',
     content:
       "My life just feels so much better with a workout routine, especially since there is constantly so much going on. I feel that it benefits me both physically and mentally. Their Saltubot really does help me keep on track with my goals, and their use of text messages suprising works. I've recommended their coaching services to everyone I know. Given how affordable it is, practically anyone can get started. Not only do you get a coach, but also a friend whose looking out for your best interests. Kudos to Harmon and Michael.",
-    avatar: '/clients/Ethan.jpg',
+    avatar: '/clients/jack.jpeg',
   },
 ]
 
@@ -58,7 +59,8 @@ const TestimonialCard = ({
       direction={{ base: 'column-reverse', md: 'row', lg: 'row' }}
       rounded={'xl'}
       p={10}
-      bg={useColorModeValue('white', 'gray.800')} // #FFFAFA
+      bg={Handsome.lightShade}
+      color={Handsome.darkShade}
       mr={'auto'}
       ml={'auto'}
       mb={'3px'}
@@ -81,10 +83,7 @@ const TestimonialCard = ({
           fontSize={{ base: '10px', md: '15px', lg: '15px' }}
         >
           {name}
-          <chakra.span fontWeight={'medium'} color={'gray.500'}>
-            {' '}
-            - {role}
-          </chakra.span>
+          <chakra.span fontWeight={'medium'}> - {role}</chakra.span>
         </chakra.p>
       </Flex>
       <Flex direction={{ base: 'column' }} pt={{ base: '20px', md: '0px' }}>

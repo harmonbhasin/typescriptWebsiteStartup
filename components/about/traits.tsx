@@ -9,6 +9,7 @@ import {
   Flex,
 } from '@chakra-ui/react'
 import { ImBook, ImAccessibility, ImProfile, ImStatsDots } from 'react-icons/im'
+import { Handsome } from '../../style/colors'
 
 interface FeatureProps {
   title: string
@@ -28,9 +29,9 @@ const Feature = ({ title, number, text, icon }: FeatureProps) => {
         h={'200px'}
         align={'center'}
         justify={'center'}
-        color={'#CA4862'}
+        color={Handsome.mainColorContrast}
         rounded={'full'}
-        bg={'#FFFAFA'}
+        bg={Handsome.lightShade}
         mb={1}
       >
         {icon}
@@ -39,7 +40,7 @@ const Feature = ({ title, number, text, icon }: FeatureProps) => {
         {title}
       </Text>
       <Divider />
-      <Text color={'#FFFAFA'} fontSize={'xl'}>
+      <Text color={Handsome.lightShade} fontSize={'xl'}>
         {text}
       </Text>
     </Stack>

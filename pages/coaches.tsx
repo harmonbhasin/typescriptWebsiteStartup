@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Box, Center, Divider, Flex, Heading, Text } from '@chakra-ui/react'
-import SubmitInfo from '../components/contactForm'
+import SubmitInfo from '../components/contact/contactForm'
 import Coach from '../components/coaches/coach'
 import CoachesLayout from '../components/layout/contactLayout'
 

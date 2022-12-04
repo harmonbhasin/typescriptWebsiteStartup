@@ -14,11 +14,13 @@ import {
   Text,
   Heading,
 } from '@chakra-ui/react'
+import { Handsome } from '../../style/colors'
 
 interface StatsCardProps {
   title: string
   stat: string
 }
+
 function StatsCard(props: StatsCardProps) {
   const { title, stat } = props
   return (
@@ -27,13 +29,14 @@ function StatsCard(props: StatsCardProps) {
       py={'5'}
       shadow={'xl'}
       border={'1px solid'}
-      borderColor={useColorModeValue('gray.800', 'gray.500')}
       rounded={'lg'}
+      bg={Handsome.darkAccent}
+      color={Handsome.lightShade}
     >
-      <StatLabel fontWeight={'medium'} isTruncated>
+      <StatLabel fontSize={'lg'} fontWeight={'medium'} isTruncated>
         {title}
       </StatLabel>
-      <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
+      <StatNumber fontSize={'4xl'} fontWeight={'extrabold'}>
         {stat}
       </StatNumber>
     </Stat>
@@ -76,7 +79,8 @@ const Statistics = () => {
           md: 'repeat(4, 1fr)',
         }}
         gap={6}
-        p={{ base: '50px', md: '100px' }}
+        py={{ base: '50px', md: '200px' }}
+        px={{ base: '50px', md: '100px' }}
       >
         <GridItem w="100%" colSpan={{ base: 1, sm: 2, md: 2 }}>
           <Heading as={'h2'} size={'2xl'}>
@@ -85,7 +89,11 @@ const Statistics = () => {
         </GridItem>
         <GridItem w="100%">
           <Flex flexDirection={'column'}>
-            <Text fontSize={'5xl'} fontWeight={'bold'}>
+            <Text
+              fontSize={'5xl'}
+              fontWeight={'bold'}
+              color={Handsome.mainColor}
+            >
               70%
             </Text>
             <Box fontSize={'md'}>
@@ -96,7 +104,11 @@ const Statistics = () => {
         </GridItem>
         <GridItem w="100%">
           <Flex flexDirection={'column'}>
-            <Text fontSize={'5xl'} fontWeight={'bold'}>
+            <Text
+              fontSize={'5xl'}
+              fontWeight={'bold'}
+              color={Handsome.mainColor}
+            >
               80%
             </Text>
             <Box fontSize={'md'}>
@@ -105,13 +117,7 @@ const Statistics = () => {
           </Flex>
         </GridItem>
       </Grid>
-      <Box
-        maxW="7xl"
-        mx={'auto'}
-        pt={5}
-        px={{ base: 2, sm: 12, md: 17 }}
-        py={7}
-      >
+      <Box mx={'auto'} px={{ base: 2, sm: 12, md: 17 }} pb={{ md: '150px' }}>
         <chakra.h1
           textAlign={'center'}
           py={{ base: 5, md: 20 }}
@@ -120,14 +126,17 @@ const Statistics = () => {
         >
           Who we work with?
         </chakra.h1>
-        <SimpleGrid
-          columns={{ base: 1, md: 3 }}
-          spacing={{ base: '75px', lg: 8 }}
+        <Flex
+          direction={{ base: 'column', md: 'row' }}
+          justify={{ md: 'center' }}
+          justifyContent={{ md: 'space-between' }}
+          columnGap={{ md: '30px' }}
+          rowGap={{ base: '20 px' }}
         >
           <StatsCard title={'We serve'} stat={result + ' clients'} />
-          <StatsCard title={'In'} stat={'4 different states'} />
+          <StatsCard title={'In'} stat={'5  states'} />
           <StatsCard title={'From ages'} stat={'14 - 22'} />
-        </SimpleGrid>
+        </Flex>
       </Box>
     </>
   )

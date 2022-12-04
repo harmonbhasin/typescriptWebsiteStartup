@@ -13,8 +13,9 @@ import {
 } from '@chakra-ui/react'
 import { MdCheck } from 'react-icons/md'
 import { useEffect, useState } from 'react'
+import { Handsome } from '../../style/colors'
 
-export type ProductProps = {
+export interface ProductProps {
   name: string
   description: string
   price: string
@@ -22,6 +23,30 @@ export type ProductProps = {
   priceId: string
   special: boolean
 }
+
+interface Card {
+  background: string
+  hover: string
+  text: string
+  banner?: string
+  bordercolor: string
+}
+
+const colorScheme: Card = {
+  background: Handsome.darkAccent,
+  hover: Handsome.lighterDarkAccent,
+  text: Handsome.lightShade,
+  banner: Handsome.lighterDarkAccent,
+  bordercolor: Handsome.lightShade,
+}
+
+// const colorScheme: Card = {
+//   background: Handsome.lightShade,
+//   hover: Handsome.lighterDarkAccent,
+//   text: Handsome.darkShade,
+//   banner: Handsome.lighterDarkAccent,
+//   bordercolor: Handsome.lightShade,
+// }
 
 export const Product = ({
   name,
@@ -57,18 +82,20 @@ export const Product = ({
     if (special) {
       return (
         <Box
-          _hover={{ bg: '#69D29A' }}
-          bg="#8FdEb4"
-          minH={{ base: '600px', md: '550px' }}
+          _hover={{ bg: colorScheme.hover }}
+          bg={colorScheme.background}
+          minH={{ base: '500px', md: '550px' }}
+          maxW={{ base: '500px', md: '450px' }}
+          minW={{ base: '250px', md: '400px' }}
           shadow="2xl"
           borderRadius={'xl'}
+          color={colorScheme.text}
         >
-          <Box bg={'#7DD8A7'} borderTopRadius="xl">
+          <Box bg={colorScheme.banner} borderTopRadius="xl">
             <Center>
               <Text
                 textTransform="uppercase"
                 py={1.5}
-                color={'#FFFAFA'}
                 fontSize="l"
                 fontWeight="600"
               >
@@ -81,9 +108,9 @@ export const Product = ({
               <Text as="b" fontSize={'3xl'}>
                 {name}
               </Text>
-              <Divider />
+              <Divider borderColor={colorScheme.text} />
               <Text>{description}</Text>
-              <Divider />
+              <Divider borderColor={colorScheme.text} />
               <HStack>
                 <Text as="b" fontSize={{ base: '5xl', md: '6xl' }}>
                   ${price}
@@ -93,8 +120,14 @@ export const Product = ({
               <Link href={result} _hover={{}}>
                 <Button
                   w={'100%'}
-                  bg={'#40C67F'}
-                  _hover={{ bg: '#FFFAFA', color: '#40C67F' }}
+                  bg={colorScheme.background}
+                  border={'2px'}
+                  borderColor={colorScheme.bordercolor}
+                  _hover={{
+                    bg: colorScheme.text,
+                    color: colorScheme.background,
+                    borderColor: colorScheme.bordercolor,
+                  }}
                   type="submit"
                 >
                   Subscribe
@@ -104,7 +137,7 @@ export const Product = ({
               <List>
                 {features.map((feature) => (
                   <ListItem m={2}>
-                    <ListIcon as={MdCheck} color={'#30A265'} />
+                    <ListIcon as={MdCheck} color={colorScheme.text} />
                     {feature}
                   </ListItem>
                 ))}
@@ -119,21 +152,25 @@ export const Product = ({
   return (
     <Box
       alignSelf={{ base: 'center', lg: 'center' }}
-      _hover={{ bg: '#69D29A' }}
-      bg="#8FdEb4"
+      _hover={{ bg: colorScheme.hover }}
+      bg={colorScheme.background}
       py={10}
-      minH={{ base: '600px', md: '550px' }}
+      minH={{ base: '400px', md: '550px', lg: '550px' }}
+      maxH={{ base: '525px', md: '550px', lg: '550px' }}
+      maxW={{ base: '500px', md: '450px' }}
+      minW={{ base: '250px', md: '400px' }}
       shadow="lg"
       borderRadius={'xl'}
+      color={colorScheme.text}
     >
       <Box py={4} px={5}>
         <VStack align={'normal'}>
           <Text as="b" fontSize={'3xl'}>
             {name}
           </Text>
-          <Divider />
+          <Divider borderColor={colorScheme.text} />
           <Text>{description}</Text>
-          <Divider />
+          <Divider borderColor={colorScheme.text} />
           <HStack>
             <Text as="b" fontSize={{ base: '5xl', md: '6xl' }}>
               ${price}
@@ -143,8 +180,15 @@ export const Product = ({
           <Link href={result} _hover={{}}>
             <Button
               w={'100%'}
-              bg={'#40C67F'}
-              _hover={{ bg: '#FFFAFA', color: '#40C67F' }}
+              bg={colorScheme.background}
+              border={'2px'}
+              borderColor={colorScheme.bordercolor}
+              _hover={{
+                bg: colorScheme.text,
+                color: colorScheme.background,
+                borderColor: colorScheme.bordercolor,
+              }}
+              type="submit"
             >
               Subscribe
             </Button>
@@ -153,7 +197,7 @@ export const Product = ({
           <List>
             {features.map((feature) => (
               <ListItem m={2}>
-                <ListIcon as={MdCheck} color={'#30A265'} />
+                <ListIcon as={MdCheck} color={colorScheme.text} />
                 {feature}
               </ListItem>
             ))}

@@ -15,13 +15,14 @@ import PricingLayout from '../components/layout/pricingLayout'
 
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
+import { Handsome } from '../style/colors'
 
 export type questionProps = {
   question: string
   answer: string
 }
 
-const questions: questionProps[] = [
+const questions: Array<questionProps> = [
   {
     question: 'Why choose Saltubolic over other fitness influencers programs?',
     answer:
@@ -34,9 +35,9 @@ const questions: questionProps[] = [
   },
   {
     question:
-      'What is the difference between Plus and Pro when it comes to diet?',
+      'What is the difference between the Optimize and Premium plan when it comes to diet?',
     answer:
-      "With Plus, we will help you by informing you with basic diet information, and simple things you can do to reach your goals. With Pro, we will hand tailor a diet for you that meets your goals inside and outside of the gym. We'll make sure that you're able to enjoy food with your friends and family while still hitting your goals. Pro is recommended to someone who has a target they want to hit by a specifc date or if they just want to achieve their health goals much quicker.",
+      "The optimize plan is really focused on the training part of health and fitness. We provide brief diet advice such as macronutrients ratios and foods that are good for health, but we don't do more than that. In the premium plan we will help you track everything as closely as you want, and really look into your diet. We'll do our best to optimize your diet based on activity, time, and other health metrics. If you have a goal weight that you want to hit, and it is reasonable, the Premium plan will get you to that goal the fastest.",
   },
   {
     question: 'How soon will I see results?',
@@ -62,30 +63,20 @@ const questions: questionProps[] = [
 
 const Pricing: NextPageWithLayout = () => {
   return (
-    <Box color={'#FFFAFA'} bg={'#8FdEb4'} p={{ base: '50px', md: '100px' }}>
+    <Box
+      color={Handsome.lightShade}
+      bg={Handsome.darkShade}
+      p={{ base: '50px', md: '100px' }}
+    >
       <Flex direction="column">
-        <Flex direction={{ base: 'column-reverse', md: 'row' }}>
-          <Flex direction="column" justify={'space-between'}>
-            <Text
-              as="b"
-              fontSize={{ base: '3xl', md: '6xl' }}
-              mb={{ base: '3' }}
-            >
-              Students of all ages see accelerated changes in their body with
-              Saltubolic.
-            </Text>
-            <Text fontSize={{ base: 'lg', md: '3xl' }}>
-              Choose a plan that fits in your budget. You'll see results no
-              matter what plan you choose.
-            </Text>
-          </Flex>
-          <Flex direction="column" shrink={0}>
-            <Image
-              borderRadius="full"
-              boxSize={{ base: '0px', md: '350px' }}
-              src="/posing.jpeg"
-            />
-          </Flex>
+        <Flex direction="column" align={'center'}>
+          <Text as="b" fontSize={{ base: '3xl', md: '6xl' }} mb={{ base: '3' }}>
+            See What All The Hypes About!
+          </Text>
+          <Text fontSize={{ base: 'lg', md: '3xl' }}>
+            Choose a plan that fits in your budget. You'll see results no matter
+            what plan you choose.
+          </Text>
         </Flex>
         <Box height={{ base: '50px', md: '100px' }} />
         <Products />
@@ -102,7 +93,7 @@ const Pricing: NextPageWithLayout = () => {
           </Text>
           <Accordion
             mb={'50px'}
-            w={{ base: '250px', md: '600px', lg: '900px' }}
+            w={{ base: '300px', md: '600px', lg: '900px' }}
             allowToggle
           >
             {questions.map((question: questionProps) => (

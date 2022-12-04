@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Box } from '@chakra-ui/react'
-import SubmitInfo from '../components/contactForm'
+import SubmitInfo from '../components/contact/contactForm'
 import CoachesLayout from '../components/layout/contactLayout'
 
 import type { ReactElement } from 'react'

@@ -13,6 +13,7 @@ import {
   Spacer,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import { Handsome } from '../../style/colors'
 
 export default function CallToActionWithAnnotation() {
   const router = useRouter()
@@ -22,10 +23,7 @@ export default function CallToActionWithAnnotation() {
       align="center"
       justify={'space-evenly'}
     >
-      <Image
-        boxSize={{ base: '300px', md: '600px' }}
-        src="/harmon/vacation.jpeg"
-      />
+      <Image boxSize={{ base: '300px', md: '600px' }} src="/harmon/pose.jpg" />
       <>
         <Head>
           <link
@@ -45,14 +43,14 @@ export default function CallToActionWithAnnotation() {
               fontWeight={600}
               fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
               lineHeight={'110%'}
-              color="#FFFAFA"
+              color={Handsome.lightShade}
             >
               Get the body <br />
-              <Text as={'span'} color={'#4B9325'}>
+              <Text as={'span'} color={Handsome.mainColor}>
                 of your dreams
               </Text>
             </Heading>
-            <Text color={'#FFFAFA'}>
+            <Text color={Handsome.lightShade}>
               As college students who are very involved on campus and don't want
               to give up our social lives, we understand that it can be
               difficult to stay healthy while still achieving all of your other
@@ -69,12 +67,13 @@ export default function CallToActionWithAnnotation() {
               position={'relative'}
             >
               <Button
-                colorScheme={'green'}
-                bg={'#5D8731'}
+                color={Handsome.darkShade}
+                bg={Handsome.lightShade}
                 rounded={'full'}
                 px={6}
                 _hover={{
-                  bg: '#84ede9',
+                  bg: Handsome.darkShade,
+                  color: Handsome.lightShade,
                 }}
                 onClick={() => router.push('/pricing')}
               >
@@ -83,7 +82,7 @@ export default function CallToActionWithAnnotation() {
               <Button
                 onClick={() => router.push('/services')}
                 variant={'link'}
-                color={'#FFFAFA'}
+                color={Handsome.lightShade}
                 size={'sm'}
               >
                 Learn more

@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { IoBarbell, IoFitnessSharp, IoNewspaperOutline } from 'react-icons/io5'
 import { ReactElement } from 'react'
+import { Handsome } from '../../style/colors'
 
 interface FeatureProps {
   text: string
@@ -43,10 +44,10 @@ export default function SplitWithImage() {
         <Stack spacing={4}>
           <Text
             textTransform={'uppercase'}
-            color={'#FFFAFA'}
+            color={Handsome.lightShade}
             fontWeight={600}
             fontSize={'sm'}
-            bg={'#8fdeb4'}
+            bg={Handsome.darkShade}
             p={2}
             alignSelf={'flex-start'}
             rounded={'md'}
@@ -62,19 +63,19 @@ export default function SplitWithImage() {
           <Stack spacing={4} divider={<StackDivider borderColor={'#FFFAFA'} />}>
             <Feature
               icon={<Icon as={IoBarbell} color={'#FFFAFA'} w={5} h={5} />}
-              iconBg={'#f16764'}
+              iconBg={Handsome.darkAccent}
               text={'Workout Plans'}
             />
             <Feature
               icon={<Icon as={IoFitnessSharp} color={'#FFFAFA'} w={5} h={5} />}
-              iconBg={'#8fdeb4'}
+              iconBg={Handsome.mainColorContrast}
               text={'Nutritional Recommendations'}
             />
             <Feature
               icon={
                 <Icon as={IoNewspaperOutline} color={'white'} w={5} h={5} />
               }
-              iconBg={'#52bbb7'}
+              iconBg={Handsome.lightAccent}
               text={'Weekly Newsletters'}
             />
           </Stack>

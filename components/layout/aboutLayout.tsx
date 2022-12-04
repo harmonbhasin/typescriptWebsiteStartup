@@ -1,29 +1,27 @@
 import Navbar from './navbar'
 import Footer from './footer'
+import { Handsome } from '../../style/colors'
 
 interface LayoutProps {
   children: React.ReactNode
 }
-// '#EA8091'
+
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Navbar
-        main={'#FFFAFA'}
-        textColor={'#461D2D'}
-        hoverColor={'#f16764'}
-        subnavColor={'black'}
-        subtxtColor={'gray'}
+        mainColor={Handsome.lightShade}
+        textColor={Handsome.darkShade}
+        subnavColor={Handsome.lightShade}
+        subtitleColor={Handsome.lightShade}
         isWhite={true}
       />
       <main>{children}</main>
       <Footer
-        main={'#f16764'}
-        hoverColor={'#CA4862'}
-        submitColor={{
-          bg: '#FFFAFA',
-          color: '#CA4862',
-        }}
+        mainColor={Handsome.darkShade}
+        mainColorContrast={Handsome.darkAccent}
+        textColor={Handsome.lightShade}
+        isWhite={false}
       />
     </>
   )

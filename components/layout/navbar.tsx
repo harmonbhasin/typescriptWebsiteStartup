@@ -21,38 +21,75 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons'
 
-interface DesktopNavLinkProps {
-  hoverSettings: any
-  hoverColor: string
-  subtxtColor: string
-  subnavColor: string
+interface NavItem {
+  label: string
+  sublabel?: string
+  href?: string
+  children?: Array<NavItem>
 }
-
-interface MobileNavLinkProps {
-  hoverColor: string
-}
-
-interface NavBarColorProps {
-  main: string
+interface NavBarProps {
+  mainColor: string
   textColor: string
-  hoverColor: string
   subnavColor: string
-  subtxtColor: string
-  isWhite: boolean
+  subtitleColor: string
+
+  isWhite?: boolean
 }
+
+const NAV_ITEMS: Array<NavItem> = [
+  {
+    label: 'Shop',
+    children: [
+      {
+        label: 'Pricing',
+        sublabel: 'Look at our different plans',
+        href: '/pricing',
+      },
+      {
+        label: 'Merchandise',
+        sublabel: 'Limited-edition clothing',
+        href: '/merch',
+      },
+    ],
+  },
+  {
+    label: 'About',
+    children: [
+      {
+        label: 'Services',
+        sublabel: 'Learn how we can assist you',
+        href: '/services',
+      },
+      {
+        label: 'Our Story',
+        sublabel: 'Why we started Saltubolic',
+        href: '/about',
+      },
+    ],
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Contact Us',
+        sublabel: 'Ask us any questions',
+        href: '/contact',
+      },
+    ],
+  },
+]
 
 export default function WithSubnavigation({
-  main,
+  mainColor,
   textColor,
-  hoverColor,
   subnavColor,
-  subtxtColor,
+  subtitleColor,
   isWhite,
-}: NavBarColorProps) {
+}: NavBarProps) {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Box bg={main} color={textColor} w={'100%'}>
+    <Box bg={mainColor} color={textColor} w={'100%'}>
       <Flex minH={'80px'} py={{ base: 2 }} px={{ base: 4 }} align={'center'}>
         <Flex
           flex={{ base: 1, md: 'auto' }}
@@ -75,10 +112,10 @@ export default function WithSubnavigation({
         </Flex>
         <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
           <DesktopNav
-            hoverSettings={{ textDecoration: 'none', color: hoverColor }}
-            hoverColor={hoverColor}
+            mainColor={mainColor}
+            textColor={textColor}
             subnavColor={subnavColor}
-            subtxtColor={subtxtColor}
+            subtitleColor={subtitleColor}
           />
         </Flex>
       </Flex>
@@ -91,13 +128,11 @@ export default function WithSubnavigation({
 }
 
 const DesktopNav = ({
-  hoverSettings,
-  hoverColor,
+  mainColor,
+  textColor,
   subnavColor,
-  subtxtColor,
-}: DesktopNavLinkProps) => {
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800')
-
+  subtitleColor,
+}: NavBarProps) => {
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
@@ -107,10 +142,9 @@ const DesktopNav = ({
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'xl'}
-                fontWeight={500}
-                _hover={hoverSettings}
-                as="b"
+                fontSize={'2xl'}
+                fontWeight={'extrabold'}
+                _hover={{ textDecoration: false }}
               >
                 {navItem.label}
               </Link>
@@ -120,7 +154,7 @@ const DesktopNav = ({
               <PopoverContent
                 border={0}
                 boxShadow={'xl'}
-                bg={popoverContentBgColor}
+                bg={textColor}
                 p={4}
                 rounded={'xl'}
                 minW={'sm'}
@@ -129,9 +163,10 @@ const DesktopNav = ({
                   {navItem.children.map((child) => (
                     <DesktopSubNav
                       key={child.label}
-                      hoverColor={hoverColor}
-                      subtxtColor={subtxtColor}
+                      mainColor={mainColor}
+                      textColor={textColor}
                       subnavColor={subnavColor}
+                      subtitleColor={subtitleColor}
                       {...child}
                     />
                   ))}
@@ -148,11 +183,12 @@ const DesktopNav = ({
 const DesktopSubNav = ({
   label,
   href,
-  subLabel,
-  hoverColor,
+  sublabel,
+  mainColor,
+  textColor,
   subnavColor,
-  subtxtColor,
-}: NavItem) => {
+  subtitleColor,
+}: NavItem & NavBarProps) => {
   return (
     <Link
       href={href}
@@ -160,20 +196,24 @@ const DesktopSubNav = ({
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      _hover={{ bg: mainColor }}
     >
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             color={subnavColor}
             transition={'all .3s ease'}
-            _groupHover={{ color: hoverColor }}
-            fontWeight={500}
+            _groupHover={{ color: textColor }}
+            fontWeight={'semibold'}
           >
             {label}
           </Text>
-          <Text fontSize={'sm'} color={subtxtColor}>
-            {subLabel}
+          <Text
+            fontSize={'sm'}
+            color={subtitleColor}
+            _groupHover={{ color: textColor }}
+          >
+            {sublabel}
           </Text>
         </Box>
         <Flex
@@ -185,7 +225,7 @@ const DesktopSubNav = ({
           align={'center'}
           flex={1}
         >
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={textColor} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -240,7 +280,14 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link
+                key={child.label}
+                py={2}
+                href={child.href}
+                _hover={{
+                  textDecoration: 'none',
+                }}
+              >
                 {child.label}
               </Link>
             ))}
@@ -249,66 +296,3 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   )
 }
-
-interface NavItem {
-  label: string
-  hoverColor?: string
-  subtxtColor?: string
-  subnavColor?: string
-  subLabel?: string
-  children?: Array<NavItem>
-  href?: string
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Shop',
-    children: [
-      {
-        label: 'Pricing',
-        subLabel: 'Look at our different plans',
-        href: '/pricing',
-      },
-      {
-        label: 'Merchandise',
-        subLabel: 'Limited-edition clothing',
-        href: '/merch',
-      },
-    ],
-  },
-  {
-    label: 'About',
-    children: [
-      {
-        label: 'Services',
-        subLabel: 'Learn how we can assist you',
-        href: '/services',
-      },
-      {
-        label: 'Our Story',
-        subLabel: 'Why we started Saltubolic',
-        href: '/about',
-      },
-      /*{
-        label: 'Coaches',
-        subLabel: 'Find coaches that suit your needs',
-        href: '/coaches',
-      },*/
-    ],
-  },
-  {
-    label: 'Resources',
-    children: [
-      /*{
-        label: 'Blog',
-        subLabel: 'Get professional insights on fitness',
-        href: '/blog',
-      },*/
-      {
-        label: 'Contact Us',
-        subLabel: 'Ask us any questions',
-        href: '/contact',
-      },
-    ],
-  },
-]

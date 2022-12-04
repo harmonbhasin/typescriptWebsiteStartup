@@ -6,11 +6,12 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
+// https://www.brockherion.dev/blog/posts/creating-per-page-layouts-with-nextjs-typescript-trcp-and-nextauth/
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Navbar
-        mainColor={Handsome.mainColor}
+        mainColor={Handsome.lightAccent}
         textColor={Handsome.lightShade}
         subnavColor={Handsome.darkShade}
         subtitleColor={Handsome.darkAccent}
@@ -19,7 +20,7 @@ export default function Layout({ children }: LayoutProps) {
       <main>{children}</main>
       <Footer
         mainColor={Handsome.lightShade}
-        mainColorContrast={Handsome.mainColorContrast}
+        mainColorContrast={Handsome.lightAccent}
         textColor={Handsome.darkShade}
         isWhite={true}
       />

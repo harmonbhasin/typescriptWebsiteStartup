@@ -8,6 +8,7 @@ import {
   Image,
   Button,
 } from '@chakra-ui/react'
+import { Handsome } from '../../style/colors'
 
 const SimpleProduct = () => {
   return (
@@ -18,7 +19,7 @@ const SimpleProduct = () => {
           p={6}
           maxW={'330px'}
           w={'full'}
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={Handsome.lightShade}
           boxShadow={'2xl'}
           rounded={'lg'}
           pos={'relative'}
@@ -57,14 +58,14 @@ const SimpleProduct = () => {
           </Box>
           <Stack pt={10} align={'center'}>
             <Text
-              color={'gray.500'}
+              color={Handsome.darkAccent}
               fontSize={'sm'}
               textTransform={'uppercase'}
             >
               Brand
             </Text>
             <Heading
-              color={'#f16764'}
+              color={Handsome.darkShade}
               fontSize={'2xl'}
               fontFamily={'body'}
               fontWeight={500}
@@ -72,17 +73,24 @@ const SimpleProduct = () => {
               Tank Top
             </Heading>
             <Stack direction={'row'} align={'center'}>
-              <Text color={'#f16764'} fontWeight={800} fontSize={'xl'}>
+              <Text
+                color={Handsome.lightAccent}
+                fontWeight={800}
+                fontSize={'xl'}
+              >
                 $20
               </Text>
-              <Text textDecoration={'line-through'} color={'gray.600'}>
+              <Text
+                textDecoration={'line-through'}
+                color={Handsome.lighterDarkAccent}
+              >
                 $25
               </Text>
             </Stack>
             <Button
-              bg={'#CA4862'}
-              color={'#FFFAFA'}
-              _hover={{ bg: '#f16764', color: '#FFFAFA' }}
+              bg={Handsome.darkShade}
+              color={Handsome.lightShade}
+              _hover={{ bg: Handsome.lightShade, color: Handsome.darkShade }}
               type="submit"
             >
               Buy Now

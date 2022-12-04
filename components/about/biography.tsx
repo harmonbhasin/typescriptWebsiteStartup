@@ -8,8 +8,9 @@ import {
   IconButton,
 } from '@chakra-ui/react'
 import { BsLinkedin } from 'react-icons/bs'
+import { Handsome } from '../../style/colors'
 
-interface IndividualProps {
+export interface IndividualProps {
   name: string
   degree: string
   role: string
@@ -44,7 +45,7 @@ const Individual = ({
           variant="ghost"
           size="lg"
           icon={<BsLinkedin size="28px" />}
-          _hover={{ color: '#F16764', bg: '#FFFAFA' }}
+          _hover={{ color: Handsome.darkShade, bg: Handsome.lightShade }}
         />
       </Link>
     </HStack>
@@ -57,8 +58,6 @@ const Individual = ({
     <Text>{aboutOne}</Text>
     <Text>{aboutTwo}</Text>
     <Text>{aboutThree}</Text>
-    {/* Depricated*/}
-    {/*<Gallery cards={cards} />*/}
   </VStack>
 )
 
