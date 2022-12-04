@@ -93,7 +93,7 @@ const Client = ({ picture, name, title, linkedin }: ClientProps) => {
               </Stack>
             </Stack>
             <ModalBody px={{ lg: '50px' }}>
-              <Text>{bio}</Text>
+              <Text>hi</Text>
             </ModalBody>
           </Stack>
         </ModalContent>
