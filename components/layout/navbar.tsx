@@ -65,6 +65,11 @@ const NAV_ITEMS: Array<NavItem> = [
         sublabel: 'Why we started Saltubolic',
         href: '/about',
       },
+      {
+        label: 'Our Team',
+        sublabel: 'Meet the people behind Saltubolic',
+        href: '/coaches',
+      },
     ],
   },
   {

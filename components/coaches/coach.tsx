@@ -20,8 +20,9 @@ import {
   Button,
 } from '@chakra-ui/react'
 import { BsLinkedin } from 'react-icons/bs'
+import { Handsome } from '../../style/colors'
 
-interface CoachProps {
+export interface CoachProps {
   formalPicture: string
   informalPicture: string
   name: string
@@ -46,14 +47,17 @@ const Coach = ({
       <Stack
         w={{ sm: '100%', md: '400px' }}
         direction={{ base: 'column' }}
-        padding={4}
+        align={{ base: 'center' }}
       >
         <Link onClick={onOpen}>
           <Image
             style={{ content: image }}
             onMouseEnter={() => setImage(informalPicture)}
             onMouseOut={() => setImage(formalPicture)}
-            width={200}
+            width={300}
+            height={300}
+            background={Handsome.mainColor}
+            _hover={{ background: Handsome.mainColor }}
           />
         </Link>
         <Heading fontSize={'2xl'} fontFamily={'body'}>
@@ -66,15 +70,25 @@ const Coach = ({
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent maxH="1000px" maxW="1000px" p={10}>
+        <ModalContent
+          maxH="1000px"
+          maxW="1000px"
+          p={10}
+          background={Handsome.lightShade}
+        >
           <ModalCloseButton />
-          <Stack flexDir={'row'}>
+          <Stack
+            flexDir={{ base: 'column', md: 'row' }}
+            align={{ base: 'center', md: 'flex-start' }}
+          >
             <Stack>
               <Box flex={1} bgColor={''}>
                 <Image
                   style={{ content: image }}
-                  width={200}
+                  width={300}
+                  height={300}
                   src={formalPicture}
+                  bg={Handsome.mainColor}
                 />
               </Box>
               <Stack
@@ -82,8 +96,6 @@ const Coach = ({
                 flexDirection="column"
                 justifyContent="center"
                 alignItems="center"
-                p={1}
-                pt={2}
               >
                 <Heading fontSize={'2xl'} fontFamily={'body'}>
                   {name}
@@ -97,7 +109,12 @@ const Coach = ({
                     variant="ghost"
                     size="lg"
                     icon={<BsLinkedin size="28px" />}
-                    _hover={{ color: '#F16764', bg: '#FFFAFA' }}
+                    color={Handsome.mainColor}
+                    bg={Handsome.lightShade}
+                    _hover={{
+                      color: Handsome.lightShade,
+                      bg: Handsome.mainColor,
+                    }}
                   />
                 </Link>
               </Stack>

@@ -46,7 +46,7 @@ export default function CallToActionWithAnnotation() {
               color={Handsome.lightShade}
             >
               Get the body <br />
-              <Text as={'span'} color={Handsome.mainColor}>
+              <Text as={'span'} color={Handsome.darkAccent}>
                 of your dreams
               </Text>
             </Heading>

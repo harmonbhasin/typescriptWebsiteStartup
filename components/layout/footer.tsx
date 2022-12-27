@@ -46,14 +46,15 @@ interface Link {
 
 const companyLinks: Array<Link> = [
   { title: 'About', loc: '/about' },
+  { title: 'Coaches', loc: '/coaches' },
   /*{ title: 'Blog', loc: '/blog' },*/
   { title: 'Services', loc: '/services' },
   { title: 'Pricing', loc: '/pricing' },
   { title: 'Merch', loc: '/merch' },
-  { title: 'Contact', loc: '/contact' },
 ]
 
 const supportLinks: Array<Link> = [
+  { title: 'Contact', loc: '/contact' },
   {
     title: 'Terms and Conditions',
     loc: '/terms-and-conditions',
