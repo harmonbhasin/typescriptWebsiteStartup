@@ -23,7 +23,7 @@ const coachInfo: Array<CoachProps> = [
     title: 'Bodybuilding Specialist',
     bio: "Co-Founder Harmon grew up in the northwest suburbs of Chicago, and was always a very skinny kid. Throughout his life he pivoted between many sports, from wrestling to soccer, however when he started weight-lifting in sophomore year of highschool, he instantly fell in love. Initially, Harmon maxed out almost every other week, over time however, he read more about literature and learned from acredited sources online. He also accidentally picked up an eating disorder on his way to his dream physique, however overtime he was able to fix it. Harmon's main focus has been bodybuilding since day one and he's tried a variety of programs for a prolonged period of time. He hopes to help clients reach their dream physiques without having to deal with any of the adversities that he had to go through.",
     linkedin: 'https://www.linkedin.com/in/harmonbhasin/',
-  },
+  } /*
   {
     formalPicture: 'url("/coaches/formalMichael.png")',
     informalPicture: 'url("/coaches/informalMichael.png")',
@@ -31,7 +31,7 @@ const coachInfo: Array<CoachProps> = [
     title: 'Powerlifting Specialist',
     bio: "Co-Founder Michael was born, raised, nurtured in Moscow, Russia, but moved with his family to the northwest suburbs of Chicago. Growing up a chubbier kid, he always wanted to attain a movie-esque physique, but he just didn't know how to. His involvement in high school sports of water polo and swimming inspired him to live a healthier lifestyle suited for a better athletic performance, as well as a better physique. By aggregating different training disciplines and periodization methods, he excels in product design and management for Saltubolic Coaching Services. Michael is not afraid to experiment, and will do anything for science. Although he started off with a focus in powerlifting, he has shifted his training more towards functional training and loves gaining strength in movements that directly carry over to real life scenarios.",
     linkedin: 'https://www.linkedin.com/in/michael-roytman-193429204/',
-  },
+  },*/,
 ]
 
 const clientInfo: Array<ClientProps> = [
