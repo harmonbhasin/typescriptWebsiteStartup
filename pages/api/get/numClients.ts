@@ -4,15 +4,11 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 // POST /api/post/numClients
 export default async (_req: NextApiRequest, res: NextApiResponse) => {
-  const result = await notion.databases.query({
-      database_id: process.env.NOTION_CLIENT_DATABASE_ID,
-      filter: {
-        property: 'Latest',
-        checkbox:{
-            'equals': true
-        }
-      }
-  })
-  // @ts-ignore
-  res.json(result.results[0].properties.ID.number)
+  const result = await prisma.client.findMany({
+    include: {
+      profile: true,
+      personal: true,
+    },
+  }) // @ts-ignore
+  res.json(result.length + 21)
 }
