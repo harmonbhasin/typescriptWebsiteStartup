@@ -1,6 +1,5 @@
-import { Client } from '@notionhq/client'
-const notion = new Client({ auth: process.env.NOTION_KEY })
 import { NextApiRequest, NextApiResponse } from 'next'
+import { prisma } from '../../../lib/prisma'
 
 // POST /api/post/numClients
 export default async (_req: NextApiRequest, res: NextApiResponse) => {
@@ -10,5 +9,5 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
       personal: true,
     },
   }) // @ts-ignore
-  res.json(result.length + 21)
+  res.json(result.length + 23)
 }
