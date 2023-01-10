@@ -9,7 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const result = await notion.pages.create({
     parent: {
-      database_id: process.env.NOTION_DATABASE_ID,
+      database_id: process.env.NOTION_EMAIL_DATABASE_ID,
     },
     properties: {
       Email: {
