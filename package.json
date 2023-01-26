@@ -25,6 +25,7 @@
     "@stripe/react-stripe-js": "^1.10.0",
     "@stripe/stripe-js": "^1.35.0",
     "@types/react-slick": "^0.23.8",
+    "@vercel/analytics": "^0.1.8",
     "framer-motion": "^6.2.8",
     "gray-matter": "^4.0.3",
     "next": "^12.2.4",

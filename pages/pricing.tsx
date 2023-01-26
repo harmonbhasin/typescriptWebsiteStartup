@@ -16,6 +16,7 @@ import PricingLayout from '../components/layout/pricingLayout'
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
 import { Handsome } from '../style/colors'
+import Head from 'next/head'
 
 export type questionProps = {
   question: string

@@ -76,7 +76,7 @@ const supportLinks: Array<Link> = [
 const socialMedia: Array<Social> = [
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/saltubolic/',
+    href: 'https://www.instagram.com/bolic.io/',
     icon: <FaInstagram />,
   },
   {
@@ -172,7 +172,24 @@ const Footer = ({
         >
           <Stack spacing={6}>
             <Box>
+              <Link
+                href="/"
+                fontSize={'4xl'}
+                fontWeight={'extrabold'}
+                _hover={{ textDecoration: false }}
+              >
+                {isWhite ? (
+                  <Text color={Handsome.darkShade}>Bolic</Text>
+                ) : (
+                  <Text color={Handsome.lightShade}>Bolic</Text>
+                )}
+                {/*
+            <Image src={isWhite ? '/Logo.png' : '/whiteLogo.png'} h="25px" />
+          */}
+              </Link>
+              {/*
               <Image src={isWhite ? '/Logo.png' : '/whiteLogo.png'} w="250px" />
+        */}
             </Box>
             <Text fontSize={'sm'}>
               © 2022 Saltubolic LLC. All rights reserved

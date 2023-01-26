@@ -14,7 +14,7 @@ const productList: ProductProps[] = [
       'Life coaching',
       'Schedule calls',
     ],
-    priceId: 'price_1M9XgEHDxcuP4tEiFpBvCK6E', // Testing: 'price_1M7mtGHDxcuP4tEilIDQXQau',
+    priceId: process.env.PREMIUM_KEY,
     special: false,
   },
   {
@@ -29,7 +29,7 @@ const productList: ProductProps[] = [
       'Daily schedule texts',
       'Daily weight-in texts',
     ],
-    priceId: 'price_1M9WrWHDxcuP4tEixsWJGzlE', //Testing: 'price_1M7mtGHDxcuP4tEilIDQXQau',
+    priceId: process.env.OPTIMIZE_KEY,
     special: true,
   },
 ]

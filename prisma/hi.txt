@@ -23,18 +23,22 @@ model Client {
 }
 
 model Profile {
-  id                String                @id @default(uuid())
-  createdAt         DateTime              @default(now())
-  updatedAt         DateTime              @updatedAt
-  programName       String
-  workout           String
-  dailyMessage      Boolean
-  goal              goalType              @default(MAINTAIN)
-  intensity         intensityType         @default(MODERATE)
+  id           String   @id @default(uuid())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  programName  String
+  workout      String
+  dailyMessage Boolean
+
+  goal         goalType @default(MAINTAIN)
+  intensity    intensityType @default(MODERATE)
   snapshotFrequency snapshotFrequencyType @default(WEEKLY)
-  weightUsage       Int                   @default(0)
-  scheduleUsage     Int                   @default(0)
-  client            Client?
+
+  weightUsage Int      @default(0)
+  scheduleUsage Int    @default(0)
+
+
+  client       Client?
 }
 
 model Personal {
@@ -104,3 +108,4 @@ enum snapshotFrequencyType {
   WEEKLY
   MONTHLY
 }
+

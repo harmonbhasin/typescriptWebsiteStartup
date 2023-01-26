@@ -9,5 +9,5 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
       personal: true,
     },
   }) // @ts-ignore
-  res.json(result.length + 23)
+  res.status(200).json(result.length + 23)
 }

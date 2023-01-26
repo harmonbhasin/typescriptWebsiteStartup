@@ -20,6 +20,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons'
+import { Handsome } from '../../style/colors'
 
 interface NavItem {
   label: string
@@ -111,8 +112,20 @@ export default function WithSubnavigation({
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Link href="/">
+          <Link
+            href="/"
+            fontSize={'4xl'}
+            fontWeight={'extrabold'}
+            _hover={{ textDecoration: false }}
+          >
+            {isWhite ? (
+              <Text color={Handsome.darkShade}>Bolic</Text>
+            ) : (
+              <Text color={Handsome.lightShade}>Bolic</Text>
+            )}
+            {/*
             <Image src={isWhite ? '/Logo.png' : '/whiteLogo.png'} h="25px" />
+          */}
           </Link>
         </Flex>
         <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
