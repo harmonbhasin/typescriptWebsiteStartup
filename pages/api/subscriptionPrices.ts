@@ -6,13 +6,13 @@ const productList: ProductProps[] = [
   {
     name: 'Premium',
     description: 'Deep dive into your health with our complete health analysis',
-    price: '25',
+    price: '30',
     features: [
-      'First access to new features',
+      'Exclusive access to new features',
       'Comprehensive diet plan',
+      'Injury assistance',
       'Bloodwork analysis',
-      'Life coaching',
-      'Schedule calls',
+      'Coaches on call',
     ],
     priceId: process.env.PREMIUM_KEY,
     special: false,
@@ -20,14 +20,14 @@ const productList: ProductProps[] = [
   {
     name: 'Optimize',
     description:
-      'Utilize online coaching and get exclusive access to our AI texts',
-    price: '6',
+      "Utilize online coaching with access to our A.I. that'll help keep you accountable through text conversations",
+    price: '8.50',
     features: [
+      '10+ workout templates',
       'Custom workout programs',
-      'Access to coaches 24/7',
-      'Injury assitance',
-      'Daily schedule texts',
-      'Daily weight-in texts',
+      'Access to A.I. 24/7 365',
+      'Daily texts from A.I.',
+      'Customize your A.I.',
     ],
     priceId: process.env.OPTIMIZE_KEY,
     special: true,
