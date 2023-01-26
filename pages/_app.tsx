@@ -3,7 +3,6 @@ import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { Analytics } from '@vercel/analytics/react'
 import { ChakraProvider } from '@chakra-ui/react'
-// import { SessionProvider } from 'next-auth/react'
 import Head from 'next/head'
 import '@fontsource/raleway/400.css'
 import '@fontsource/raleway/700.css'
@@ -22,13 +21,11 @@ type AppPropsWithLayout = AppProps & {
 
 const App = ({
   Component,
-  //pageProps: { session, ...pageProps },
   pageProps: { ...pageProps },
 }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page)
   const layout = getLayout(<Component {...pageProps} />)
   return (
-    //  <SessionProvider session={session} refetchInterval={5 * 60}>
     <ChakraProvider>
       <Head>
         <title>Bolic</title>
@@ -62,7 +59,6 @@ const App = ({
       {layout}
       <Analytics />
     </ChakraProvider>
-    // </SessionProvider>
   )
 }
 
