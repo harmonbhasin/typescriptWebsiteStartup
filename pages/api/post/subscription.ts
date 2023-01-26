@@ -23,8 +23,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       mode: 'subscription',
       //success_url: 'http://localhost:3001/order/success?session_id={CHECKOUT_SESSION_ID}',
       //cancel_url: 'http://localhost:3001/pricing',
-      success_url: `https://www.saltubolic.com/success`,
-      cancel_url: `https://www.saltubolic.com/pricing`,
+      success_url: `${req.headers.origin}/success`,
+      cancel_url: `${req.headers.origin}/pricing`,
       automatic_tax: { enabled: true },
     })
     res.json(session.url)
