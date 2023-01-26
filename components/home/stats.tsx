@@ -134,7 +134,7 @@ const Statistics = () => {
           rowGap={{ base: '20 px' }}
         >
           <StatsCard title={'We serve'} stat={result + ' clients'} />
-          <StatsCard title={'In'} stat={'5  states'} />
+          <StatsCard title={'In'} stat={'7 states'} />
           <StatsCard title={'From ages'} stat={'14 - 22'} />
         </Flex>
       </Box>
