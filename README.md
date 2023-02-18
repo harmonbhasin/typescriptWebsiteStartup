@@ -34,3 +34,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 Had to downgrade @next-auth/prisma-adapter to ^1.0.1 because there is a bug
+
+## LICENSE
+
+There is an MIT license on this so if you want to use this code, feel free to, just include my name in the source code.
